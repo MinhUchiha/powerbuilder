@@ -1,0 +1,15 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "..\\Bat\\com_b09(\u751f\u7523\u60c5\u5831\u30c7\u30fc\u30bf\u53ce\u96c6).pbt";
+ 1 "..\\Bat\\com_b05(\u65e5\u6b21\u51e6\u7406).pbt";
+ 2 "..\\Genka\\com_g70\uff08\u7d71\u4e00\u632f\u66ff\u5358\u4fa1\u7b97\u5b9a\u8868\uff09.pbt";
+ 3 "..\\Bat\\com_b03(\u7d71\u4e00\u632f\u66ff\u5358\u4fa1\u51e6\u7406).pbt";
+ 4 "..\\Genka\\com_g11\uff08\u7d71\u4e00\u632f\u66ff\u5358\u4fa1\u5165\u529b\uff09.pbt";
+ 5 "..\\Bat\\com_b01(\u6708\u6b21\u7de0\u51e6\u7406).pbt";
+ 6 "..\\Main\\com_main02(\u539f\u4fa1\u6a19\u6e96).pbt";
+ 7 "..\\Main\\com_main04(\u6708\u6b21\u539f\u4fa1\u51e6\u7406).pbt";
+@end;
+DefaultTarget "..\\Bat\\com_b09(\u751f\u7523\u60c5\u5831\u30c7\u30fc\u30bf\u53ce\u96c6).pbt";
+DefaultRemoteTarget "..\\Bat\\com_b09(\u751f\u7523\u60c5\u5831\u30c7\u30fc\u30bf\u53ce\u96c6).pbt";

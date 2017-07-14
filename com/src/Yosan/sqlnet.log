@@ -1,0 +1,340 @@
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-NOV-2008 10:14:00
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-NOV-2008 17:50:09
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 27-NOV-2008 13:12:19
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12543, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 04-DEC-2008 11:13:08
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12543
+    TNS-12543: TNS: 接続先ホストに到達できません。
+    ns secondary err code: 12560
+    nt main err code: 513
+    TNS-00513: 接続先ホストに到達できません。
+    nt secondary err code: 51
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.110.100)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morosei)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-DEC-2008 13:49:26
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.110.100)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morosei)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-DEC-2008 14:11:07
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morosap)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-JAN-2009 13:58:29
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 27-JAN-2009 11:10:13
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHRAI)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 18-FEB-2009 10:05:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.11.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROFUN)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-MAR-2009 17:37:50
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-APR-2009 11:42:16
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-APR-2009 11:42:42
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 09-APR-2009 11:18:04
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 12-APR-2009 10:52:12
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 19-JUN-2009 14:18:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 18-JAN-2010 12:08:46
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL_OHRAI-H)(USER=ohrai-h))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 18-JAN-2010 19:46:32
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0

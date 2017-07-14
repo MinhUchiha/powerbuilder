@@ -1,0 +1,16 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "..\\Yosan\\com_y61(\u4e88\u7b97\uff3f\u4eba\u54e1\u8a08\u753b\u53d6\u8fbc).pbt";
+ 1 "..\\Yosan\\com_y62(\u4e88\u7b97\uff3f\u9593\u63a5\u6642\u9593\u5165\u529b).pbt";
+ 2 "..\\Yosan\\com_y63(\u4e88\u7b97\uff3f\u9593\u63a5\u6642\u9593\u4e00\u89a7\u8868).pbt";
+ 3 "..\\Yosan\\com_y64(\u4e88\u7b97\uff3f\u6708\u5225\u6642\u9593\u8a2d\u5b9a\u8868).pbt";
+ 4 "..\\Yosan\\com_y65(\u4e88\u7b97\uff3f\u6708\u5225\u4e88\u7b97\u8a2d\u5b9a\u8868).pbt";
+ 5 "..\\Yosan\\com_y73(\u4e88\u7b97\uff3f\u6a19\u6e96\u76f4\u63a5\u7d4c\u8cbb\u7b97\u51fa).pbt";
+ 6 "..\\Yosan\\com_y74(\u4e88\u7b97\uff3f\u6a19\u6e96\u76f4\u63a5\u7d4c\u8cbb\u5165\u529b).pbt";
+ 7 "..\\Yosan\\com_y75(\u4e88\u7b97\uff3f\u88fd\u9020\u7d4c\u8cbb\u53d6\u8fbc).pbt";
+ 8 "..\\Yosan\\com_y81(\u4e88\u7b97\uff3f\u4e88\u7b97\u4e00\u89a7\u8868).pbt";
+@end;
+DefaultTarget "..\\Yosan\\com_y81(\u4e88\u7b97\uff3f\u4e88\u7b97\u4e00\u89a7\u8868).pbt";
+DefaultRemoteTarget "..\\Yosan\\com_y81(\u4e88\u7b97\uff3f\u4e88\u7b97\u4e00\u89a7\u8868).pbt";

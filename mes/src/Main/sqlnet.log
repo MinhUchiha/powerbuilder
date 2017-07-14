@@ -1,0 +1,1070 @@
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morogai)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 11-JUN-2008 09:37:38
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morogai)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 11-JUN-2008 09:38:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morogai)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 11-JUN-2008 09:39:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.110.100)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morosei)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 12-JUN-2008 10:25:31
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.100.100)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=moromik)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 23-JUN-2008 17:05:05
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morogai)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 16-JUL-2008 18:04:54
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morogai)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 16-JUL-2008 21:36:55
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV080)(USER=FMV080_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 30-JUL-2008 21:57:50
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.9.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV074)(USER=FMV074_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 12-AUG-2008 14:39:11
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS: 接続が拒否されました。
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV080)(USER=FMV080_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 21-AUG-2008 21:35:47
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.100.100)(PORT=1521))(CONNECT_DATA=(SID=MOROMIK)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV074)(USER=FMV074_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 27-AUG-2008 16:58:39
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV080)(USER=FMV080_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 28-AUG-2008 21:42:11
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.100.100)(PORT=1521))(CONNECT_DATA=(SID=MOROMIS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV080)(USER=FMV080_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 04-SEP-2008 21:04:38
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12541
+    TNS-12541: TNS: リスナーがありません。
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: リスナーがありません。
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.100.100)(PORT=1521))(CONNECT_DATA=(SID=MOROMIS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV080)(USER=FMV080_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 04-SEP-2008 21:04:46
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12541
+    TNS-12541: TNS: リスナーがありません。
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: リスナーがありません。
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 02-DEC-2008 18:33:20
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 03-DEC-2008 14:30:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JPT002)(USER=akiyoshi-y))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 08-DEC-2008 09:37:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 15-DEC-2008 19:14:33
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-JAN-2009 09:17:21
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 10-FEB-2009 14:57:18
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 03-APR-2009 17:14:07
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12637, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-APR-2009 14:01:22
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12637
+    TNS-12637: パケット受信に失敗しました。
+    ns secondary err code: 12547
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-APR-2009 20:08:58
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROSEN)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 08-APR-2009 19:07:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 26-MAY-2009 16:27:49
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.11.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROFUN)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 01-JUN-2009 19:03:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 22-JUN-2009 15:17:39
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROSAP)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-JUL-2009 13:31:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.9.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROROK)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 08-JUL-2009 10:08:08
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 21-JUL-2009 09:16:53
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 23-JUL-2009 15:11:33
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 20-AUG-2009 18:13:40
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 01-9月 -2009 14:20:49
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 01-9月 -2009 14:45:25
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=DELL-OMINE)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 18-9月 -2009 09:30:44
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=DELL-OMINE)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 18-9月 -2009 09:39:51
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=DELL-OMINE)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 18-9月 -2009 09:42:04
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.101.1.20)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=NS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 13-NOV-2009 09:41:55
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROSAP)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 08-DEC-2009 10:14:58
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.101.1.20)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=NS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 16-DEC-2009 17:38:24
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 17-12月-2009 17:09:05
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.2)(PORT=1521))(CONNECT_DATA=(SID=MOROGAI)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-DEC-2009 17:13:05
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.101.1.20)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=NS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 19-JAN-2010 22:21:48
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 21-JAN-2010 17:57:27
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.101.1.20)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=NS)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 10-FEB-2010 18:06:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROSAP)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 26-FEB-2010 15:05:10
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.102.1.43)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 02-MAR-2010 13:09:12
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 03-MAR-2010 16:36:25
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.1.0.2.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.1.0.2.0 - Production
+  Time: 13-4月 -2010 13:19:11
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.1.0.2.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.1.0.2.0 - Production
+  Time: 26-4月 -2010 18:05:44
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.1.0.2.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.1.0.2.0 - Production
+  Time: 14-5月 -2010 16:42:35
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=OHMINE-A-PC)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 24-2月 -2015 13:23:24
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 16-7月 -2015 13:46:36
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 16-7月 -2015 13:49:51
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>

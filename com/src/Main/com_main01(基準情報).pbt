@@ -1,0 +1,10 @@
+Save Format v3.0(19990112)
+@begin Projects
+ 0 "1&com_main01&com_main01.pbl";
+ 1 "1&com_m48&..\\Mast\\com_m48.pbl";
+ 2 "1&com_m57&..\\mast\\com_m57.pbl";
+@end;
+appname "com_main01";
+applib "com_main01.pbl";
+LibList "com_main01.pbl;..\\Pf\\com_pf.pbl;..\\Pf\\com_pf_api.pbl;..\\Pf\\com_pf_sup.pbl;..\\Pf\\pw_print.pbl;..\\Pu\\com_pu_object.pbl;..\\Pw\\com_pw_bumon.pbl;..\\Pw\\com_pw_event.pbl;..\\Pw\\com_pw_gun.pbl;..\\Pw\\com_pw_haifu.pbl;..\\Pw\\com_pw_help.pbl;..\\Pw\\com_pw_himoku.pbl;..\\Pw\\com_pw_hin.pbl;..\\Pw\\com_pw_hinkubun.pbl;..\\Pw\\com_pw_kaiso_hin_kubun.pbl;..\\Pw\\com_pw_kamoku.pbl;..\\Pw\\com_pw_koutei.pbl;..\\Pw\\com_pw_line.pbl;..\\Pw\\com_pw_opening.pbl;..\\Pw\\com_pw_prog.pbl;..\\Pw\\com_pw_printer.pbl;..\\Pw\\com_pw_sisan.pbl;..\\Pw\\com_pw_syohin.pbl;..\\Pw\\com_pw_tani.pbl;..\\Pw\\com_pw_tanto.pbl;..\\Pw\\com_pw_team.pbl;..\\Pw\\com_pw_tkubun.pbl;..\\Pw\\com_pw_torihiki.pbl;..\\Pw\\com_pw_import.pbl;..\\Pw\\com_pw_riyu.pbl;..\\Pw\\com_pw_printer.pbl;..\\Pw\\com_pw_group.pbl;..\\Pw\\com_pw_hin_daigae.pbl;..\\Pw\\com_pw_togo_line.pbl;..\\Pw\\com_pw_kinmu.pbl;..\\Pw\\com_pw_a_bunrui.pbl;..\\Mast\\com_m01.pbl;..\\Mast\\com_m02.pbl;..\\Mast\\com_m03.pbl;..\\Mast\\com_m04.pbl;..\\Mast\\com_m05.pbl;..\\Mast\\com_m07.pbl;..\\Mast\\com_m11.pbl;..\\Mast\\com_m12.pbl;..\\Mast\\com_m14.pbl;..\\Mast\\com_m15.pbl;..\\Mast\\com_m17.pbl;..\\Mast\\com_m18.pbl;..\\Mast\\com_m19.pbl;..\\Mast\\com_m20.pbl;..\\Mast\\com_m24.pbl;..\\Mast\\com_m25.pbl;..\\Mast\\com_m27.pbl;..\\Mast\\com_m28.pbl;..\\Mast\\com_m32.pbl;..\\Mast\\com_m33.pbl;..\\Mast\\com_m36.pbl;..\\Mast\\com_m37.pbl;..\\Mast\\com_m38.pbl;..\\Mast\\com_m41.pbl;..\\Mast\\com_m43.pbl;..\\Mast\\com_m44.pbl;..\\Mast\\com_m45.pbl;..\\Mast\\com_m16.pbl;..\\Mast\\com_m46.pbl;..\\Mast\\com_m47.pbl;..\\genka\\com_g03.pbl;..\\mast\\com_m57.pbl;..\\Mast\\com_m34.pbl;..\\Mast\\com_m49.pbl;..\\Mast\\com_m55.pbl;..\\Mast\\com_m58.pbl;..\\Mast\\com_m59.pbl;..\\Mast\\com_m60.pbl;..\\Mast\\com_m61.pbl;..\\Pw\\com_pw_higasi_bunrui.pbl";
+type "pb";

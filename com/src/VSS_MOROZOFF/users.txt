@@ -1,0 +1,15 @@
+Admin = users\admin\ss.ini
+Guest = users\guest\ss.ini
+Shindo = users\shindo\ss.ini
+Hirayama = users\hirayama\ss.ini
+Hayashi = users\hayashi\ss.ini
+Tada-h = users\tada-h\ss.ini
+Iwai = users\iwai\ss.ini
+Ohmine-a = users\ohmine-a\ss.ini
+Ohrai-h = users\ohrai-a\ss.ini
+Inoue = users\inoue\ss.ini
+Akiyoshi-y = users\akiyoshi\ss.ini
+Fujimoto-t = users\fujimoto\ss.ini
+Kikukawa-a = users\kikukawa\ss.ini
+Yoshinaga-k = users\yoshinag\ss.ini
+Fujioil = users\fujioil\ss.ini

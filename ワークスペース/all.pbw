@@ -1,0 +1,34 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "..\\com\\src\\Main\\com_main00(\u30e1\u30a4\u30f3\u30e1\u30cb\u30e5\u30fc).pbt";
+ 10 "..\\com\\src\\Main\\com_main10(\u4e88\u7b97\uff3f\u539f\u4fa1).pbt";
+ 20 "..\\com\\src\\Bat\\com_b01(\u6708\u6b21\u7de0\u51e6\u7406).pbt";
+ 1 "..\\com\\src\\Main\\com_main01(\u57fa\u6e96\u60c5\u5831).pbt";
+ 11 "..\\mes\\src\\Main\\mes_main01(\u53d7\u6255).pbt";
+ 21 "..\\com\\src\\Bat\\com_b02(\u539f\u4fa1\u6a19\u6e96\u4f5c\u6210\uff08\u6b21\u6708\uff09).pbt";
+ 2 "..\\com\\src\\Main\\com_main02(\u539f\u4fa1\u6a19\u6e96).pbt";
+ 12 "..\\mes\\src\\Main\\mes_main02(\u767a\u6ce8).pbt";
+ 22 "..\\com\\src\\Bat\\com_b03(\u7d71\u4e00\u632f\u66ff\u5358\u4fa1\u51e6\u7406).pbt";
+ 3 "..\\com\\src\\Main\\com_main03(\u53d7\u6255\u7de0\u51e6\u7406).pbt";
+ 13 "..\\mes\\src\\Main\\mes_main03(\u5165\u5eab\u4ed5\u5165).pbt";
+ 23 "..\\com\\src\\Bat\\com_b04(\u539f\u4fa1\u6539\u8a02\u51e6\u7406).pbt";
+ 4 "..\\com\\src\\Main\\com_main04(\u6708\u6b21\u539f\u4fa1\u51e6\u7406).pbt";
+ 14 "..\\mes\\src\\Main\\mes_main04(\u5de5\u7a0b\u7ba1\u7406).pbt";
+ 24 "..\\com\\src\\Bat\\com_b05(\u65e5\u6b21\u51e6\u7406).pbt";
+ 5 "..\\com\\src\\Main\\com_main05(\u30d0\u30c3\u30c1\u51e6\u7406).pbt";
+ 15 "..\\mes\\src\\Main\\mes_main05(\u8a08\u753b\u7acb\u6848).pbt";
+ 25 "..\\com\\src\\Mast\\com_m48\uff08\u30de\u30b9\u30bf\u53d6\u8fbc\uff09.pbt";
+ 6 "..\\com\\src\\Main\\com_main06(\u57fa\u6e96\u60c5\u5831\u2161).pbt";
+ 16 "..\\mes\\src\\Main\\mes_main06(\u8a08\u753b\u8abf\u6574).pbt";
+ 26 "..\\com\\src\\Mast\\com_m57\uff08\u30de\u30b9\u30bf\u7e70\u8d8a\uff09.pbt";
+ 7 "..\\com\\src\\Main\\com_main07(\u4e88\u7b97\uff3f\u57fa\u6e96\u60c5\u5831).pbt";
+ 17 "..\\mes\\src\\Zaiko\\mes_z24(\u4f1d\u7968\u767a\u884c).pbt";
+ 8 "..\\com\\src\\Main\\com_main08(\u4e88\u7b97\uff3f\u898b\u8fbc).pbt";
+ 18 "..\\com\\src\\Genka\\com_g12\uff08\u53d7\u6255\u7de0\u51e6\u7406\uff08\u5358\u72ecEXE\uff09\uff09.pbt";
+ 9 "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";
+ 19 "..\\com\\src\\Genka\\com_g13\uff08\u6708\u6b21\u539f\u4fa1\u51e6\u7406\uff08\u5358\u72ecEXE\uff09\uff09.pbt";
+@end;
+DefaultTarget "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";
+DefaultRemoteTarget "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";

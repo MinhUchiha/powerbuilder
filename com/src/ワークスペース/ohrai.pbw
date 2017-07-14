@@ -1,0 +1,32 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "..\\..\\..\\Mes\\Src\\Zaiko\\mes_z03(\u7d4c\u8cbb\u632f\u66ff\u5165\u529b).pbt";
+ 10 "..\\Main\\com_main01(\u57fa\u6e96\u60c5\u5831).pbt";
+ 20 "..\\..\\..\\Mes\\Src\\Hacyu\\mes_h03(\u767a\u6ce8\u5165\u529b).pbt";
+ 1 "..\\Genka\\com_g69\uff08\u5de5\u6570\u4f4e\u6e1b\u7387\u8868\uff12\uff09.pbt";
+ 11 "..\\Mast\\com_m37\uff08\u914d\u8ce6\u57fa\u6e96\u5024\u30de\u30b9\u30bf\uff09.pbt";
+ 21 "..\\..\\..\\Mes\\Src\\Jisseki\\mes_j16(\u4fc2\u30c1\u30fc\u30e0\u751f\u7523\u5b9f\u7e3e\u5831).pbt";
+ 2 "..\\Mast\\com_m48\uff08\u30de\u30b9\u30bf\u53d6\u8fbc\uff09.pbt";
+ 12 "..\\Main\\com_main04(\u6708\u6b21\u539f\u4fa1\u51e6\u7406).pbt";
+ 22 "..\\Main\\com_main02(\u539f\u4fa1\u6a19\u6e96).pbt";
+ 3 "..\\..\\..\\Mes\\Src\\Zaiko\\mes_z15(\u63a8\u5b9a\u5728\u5eab\u4e00\u89a7\u8868).pbt";
+ 13 "..\\Genka\\com_g05(\u539f\u4fa1\u6a19\u6e96\uff3f\u5165\u529b).pbt";
+ 23 "..\\Genka\\com_g65(\u539f\u4fa1\u6a19\u6e96\uff3f\u51fa\u529b).pbt";
+ 4 "..\\..\\..\\Mes\\Src\\Main\\mes_main01(\u53d7\u6255).pbt";
+ 14 "..\\Mast\\com_m41(\u69cb\u6210\u30de\u30b9\u30bf\u6b63\u5c55\u958b).pbt";
+ 24 "..\\Yosan\\com_y03(\u4e88\u7b97\uff3f\u914d\u8ce6\u57fa\u6e96\u5024\u30de\u30b9\u30bf).pbt";
+ 5 "..\\..\\..\\Mes\\Src\\Zaiko\\mes_z09(\u68da\u5378\u5165\u529b).pbt";
+ 15 "..\\..\\..\\Mes\\Src\\Nyuko\\mes_n03(\u5165\u5eab\u5165\u529b).pbt";
+ 6 "..\\..\\..\\Mes\\Src\\Zaiko\\mes_z10(\u671f\u672b\u68da\u5378\u5831\u544a).pbt";
+ 16 "..\\..\\..\\Mes\\Src\\Jisseki\\mes_j01(\u88fd\u9020\u5b9f\u7e3e\u5165\u529b).pbt";
+ 7 "..\\Mast\\com_m40(\u6c7a\u5b9a\u5358\u4fa1\u30de\u30b9\u30bf).pbt";
+ 17 "..\\..\\..\\Mes\\Src\\Shiji\\mes_s01(\u88fd\u9020\u6307\u56f3\u4e00\u89a7).pbt";
+ 8 "..\\Mast\\com_m18(\u5de5\u7a0b\u30de\u30b9\u30bf).pbt";
+ 18 "..\\Mast\\com_m33(\u54c1\u76ee\u30de\u30b9\u30bf).pbt";
+ 9 "..\\Bat\\com_b01(\u6708\u6b21\u7de0\u51e6\u7406).pbt";
+ 19 "..\\Genka\\com_g13\uff08\u6708\u6b21\u539f\u4fa1\u51e6\u7406\uff08\u5358\u72ecEXE\uff09\uff09.pbt";
+@end;
+DefaultTarget "..\\..\\..\\Mes\\Src\\Main\\mes_main01(\u53d7\u6255).pbt";
+DefaultRemoteTarget "..\\..\\..\\Mes\\Src\\Main\\mes_main01(\u53d7\u6255).pbt";

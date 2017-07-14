@@ -1,0 +1,7 @@
+Save Format v3.0(19990112)
+@begin Projects
+@end;
+appname "mes_n06";
+applib "mes_n06.pbl";
+LibList "mes_n06.pbl;j:\\morozoff\\prog\\com\\src\\Pu\\com_pu_object.pbl;j:\\morozoff\\prog\\com\\src\\Pf\\com_pf_sup.pbl;j:\\morozoff\\prog\\com\\src\\Pf\\com_pf_api.pbl;j:\\morozoff\\prog\\com\\src\\Pf\\com_pf.pbl;j:\\morozoff\\prog\\com\\src\\Pf\\pw_print.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_help.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_prog.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_opening.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_team.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_bumon.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_event.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_line.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_tani.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_gun.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_koutei.pbl;j:\\morozoff\\prog\\com\\src\\pw\\com_pw_kaiso_hin_kubun.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_hinkubun.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_haifu.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_kamoku.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_himoku.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_sisan.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_syohin.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_torihiki.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_hin.pbl;j:\\morozoff\\prog\\com\\src\\Pw\\com_pw_tkubun.pbl;j:\\morozoff\\prog\\com\\src\\pw\\com_pw_tanto.pbl;j:\\morozoff\\Prog\\Com\\Src\\Pw\\com_pw_printer.pbl;j:\\morozoff\\Prog\\Com\\Src\\Pw\\com_pw_riyu.pbl";
+type "pb";

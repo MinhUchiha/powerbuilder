@@ -1,0 +1,1 @@
+TYPE C:\KINTAI_TEMP.CSV >> 

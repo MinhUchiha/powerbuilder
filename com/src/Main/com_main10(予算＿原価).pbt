@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Projects
+ 0 "1&com_main10&com_main10.pbl";
+@end;
+appname "com_main10";
+applib "com_main10.pbl";
+LibList "com_main10.pbl;..\\Pf\\com_pf.pbl;..\\Pf\\com_pf_api.pbl;..\\Pf\\com_pf_sup.pbl;..\\Pf\\pw_print.pbl;..\\Pu\\com_pu_object.pbl;..\\Pw\\com_pw_bumon.pbl;..\\Pw\\com_pw_event.pbl;..\\Pw\\com_pw_gun.pbl;..\\Pw\\com_pw_haifu.pbl;..\\Pw\\com_pw_help.pbl;..\\Pw\\com_pw_himoku.pbl;..\\Pw\\com_pw_hin.pbl;..\\Pw\\com_pw_hinkubun.pbl;..\\Pw\\com_pw_kaiso_hin_kubun.pbl;..\\Pw\\com_pw_kamoku.pbl;..\\Pw\\com_pw_koutei.pbl;..\\Pw\\com_pw_line.pbl;..\\Pw\\com_pw_opening.pbl;..\\Pw\\com_pw_prog.pbl;..\\Pw\\com_pw_sisan.pbl;..\\Pw\\com_pw_syohin.pbl;..\\Pw\\com_pw_tani.pbl;..\\Pw\\com_pw_tanto.pbl;..\\Pw\\com_pw_team.pbl;..\\Pw\\com_pw_tkubun.pbl;..\\Pw\\com_pw_torihiki.pbl;..\\Pw\\com_pw_riyu.pbl;..\\Pw\\com_pw_printer.pbl;..\\Pw\\com_pw_import.pbl;..\\Pw\\com_pw_hin_daigae.pbl;..\\Pw\\com_pw_togo_line.pbl;..\\Pw\\com_pw_kinmu.pbl;..\\Pw\\com_pw_a_bunrui.pbl;..\\Yosan\\com_y62.pbl;..\\Yosan\\com_y63.pbl;..\\Yosan\\com_y61.pbl;..\\Yosan\\com_y64.pbl;..\\Yosan\\com_y65.pbl;..\\Yosan\\com_y66.pbl;..\\Yosan\\com_y67.pbl;..\\Yosan\\com_y68.pbl;..\\Yosan\\com_y70.pbl;..\\Yosan\\com_y71.pbl;..\\Yosan\\com_y72.pbl;..\\Yosan\\com_y73.pbl;..\\Yosan\\com_y74.pbl;..\\Yosan\\com_y75.pbl;..\\Yosan\\com_y77.pbl;..\\Yosan\\com_y81.pbl;..\\Yosan\\com_y82.pbl;..\\Yosan\\com_y83.pbl;..\\Yosan\\com_y84.pbl;..\\Yosan\\com_y85.pbl;..\\Yosan\\com_y86.pbl;..\\Yosan\\com_y76.pbl;..\\Yosan\\com_y78.pbl;..\\Yosan\\com_y79.pbl;..\\Genka\\com_g03.pbl;..\\Yosan\\com_y87.pbl";
+type "pb";

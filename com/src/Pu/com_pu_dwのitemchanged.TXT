@@ -1,0 +1,1882 @@
+/*___/___/___/___/___/___/____/___/___/___/___/___/___/____/___/___/___/___/___/___/____/
+
+説明	継承にて共通カラムのitemchanged処理を行う。
+		
+		1.com_pw.pblとセット
+		
+		2.カラムの存在チェック後に処理を記述する。(wf_mod_setにて)
+			//回転角によるカラムの存在チェック
+			ls_mod	=	This.Modify("品目番号.Font.Escapement = 0")
+			
+		3.プログラム固有のカラムの場合「プログラムＩＤ」をコメントで追記すること。
+			例
+				//発注単位コード
+				//mes_h01,mes_h02,・・・etc.
+				
+		4.共通にゼロ詰処理をするものは、scm_pu_dw、mes_pu_dwにて再度ゼロ詰処理を
+		記述する。
+		
+		5.各プログラムでもItemchanged処理を実行したい場合、ゼロ詰め処理を再度記述する
+		必要がある。
+		　（記述しない場合、表示はゼロ詰めされるが、dataはゼロ詰めされないため。）
+		
+作成日	2004.01.05	jupiter	tada
+
+更新日	2006.03.11						ゼロ詰め対象に商品コードを追加
+	
+___/___/___/___/___/___/____/___/___/___/___/___/___/____/___/___/___/___/___/___/____/ */
+
+String			ls_prog_name, ls_moji, ls_column, ls_get_column_name, ls_Kojo_Bumon_Code
+//String			ls_bumon
+//String			ls_uriage, ls_seikyu, ls_siire, ls_siharai, ls_nouhin, ls_nyuukin_kbn
+//String			ls_kbn, ls_tanka_kbn
+//Int				i
+//
+ps_hin			lstr_hin
+ps_tani			lstr_tani
+//ps_tanto			lstr_tanto
+ps_prog			lstr_prog
+//ps_torihiki		lstr_torihiki, lstr_torihiki_clr
+//ps_busyo			lstr_busyo
+ps_hinkubun		lstr_hinkubun
+//ps_bin			lstr_bin
+//ps_address		lstr_address
+ps_bumon			lstr_bumon
+ps_bumon			lstr_bumon2
+ps_tkubun		lstr_tkubun
+//ps_bunrui		lstr_bunrui
+//ps_riyu			lstr_riyu
+ps_kamoku		lstr_kamoku
+//
+////ADD-S	2007.1.24
+ps_koutei		lstr_koutei
+//ps_sagyo			lstr_sagyo
+ps_line			lstr_line
+//ps_nonyubin		lstr_nonyubin
+////ADD-E	2007.1.24
+//
+ps_team			lstr_team
+ps_event			lstr_event
+ps_gun			lstr_gun
+ps_kaiso_hin_kubun		lstr_kaiso_h_kbn
+ps_haifu			lstr_haifu
+ps_himoku		lstr_himoku
+
+String			ls_date
+boolean			lb_date_changed			//年月が変更されたかどうか
+Datetime			ldt_date
+
+String			ls_hinkbn_no
+
+ps_syohin		lstr_syohin
+ps_torihiki		lstr_torihiki
+
+//initialize
+lb_date_changed	= false
+
+/*---------------------------------------------------------------------------------------
+	プログラムＩＤの取得（大文字に変換）
+---------------------------------------------------------------------------------------*/
+ls_prog_name	= Upper(pf_nvl_string(gstr_kaisya.prog_name, ""))
+
+
+///*---------------------------------------------------------------------------------------
+//	ゼロ詰め
+//---------------------------------------------------------------------------------------*/
+////This.Post Event zero_pack(row, dwo, data)	// 2005.08.31 DEL
+//
+//this.SetRedraw(False)
+//
+//Choose Case	dwo.name
+//	Case	"品目番号", "開始品目番号", "終了品目番号", "品名区分", "品名区分コード"	&
+//		,	"品名区分コード01", "品名区分コード02", "品名区分コード03", "品名区分コード04", "品名区分コード05"	&
+//		,	"品名区分コード06", "品名区分コード07", "品名区分コード08", "品名区分コード09", "品名区分コード10"	&
+//		,	"品名区分コード11", "品名区分コード12", "品名区分コード13", "品名区分コード14", "品名区分コード15"	&
+//		,	"品名区分コード16", "品名区分コード17", "品名区分コード18", "品名区分コード19", "品名区分コード20"	& 
+//		,	"便コード",	"出荷便コード", "出荷便",	"納入便コード" &
+//		,	"コース番号" &
+//		,	"取引区分" &
+//		,	"相手品番" &
+//		,	"分類コード","分類コード開始","分類コード終了" &
+//		,	"分類コード１","分類コード２","分類コード３","分類コード４","分類コード５" &
+//		,	"分類コード６","分類コード７","分類コード８","分類コード９" &
+//		,	"部門階層１", "部門階層２", "部門階層３", "部門階層４", "部門階層５" &
+//		,	"単位コード", "最小単位コード", "中間単位コード", "最大単位コード", "重量単位コード", "発注単位コード", "単価単位コード" &
+//		,	"廃棄単位コード", "移動単位コード", "振替元単位コード", "振替先単位コード", "振替単位コード"	&
+//		,	"受入単位コード", "出来高単位コード" &
+//		,	"親品目番号", "子品目番号", "複写元品目番号", "複写先品目番号", "開始品目番号", "終了品目番号", "出来高品目番号"	&
+//		,	"理由コード", "ロス理由コード"	&
+//		,	"ロケーション１", "ロケーション２", "納入ロケーション１", "納入ロケーション２", "移動先ロケーション１", "移動先ロケーション２"	&
+//		,	"取引区分"	&
+//		/*,	"商品コード"	//UPD 2007.1.24	*/,	"商品コード"	&
+///*ADD-S	2007.1.24*/	&
+//		,	"工程コード",	"作業コード", "ラインコード"	&
+//		,	"単位コード", "発注単位コード", "単価単位コード"	&
+//		,	"作業区分", "アレルゲンコード"	&
+//		,	"納入便コード",	"期間納入便コード",	"開始納入予定便",	"終了納入予定便",	"納入予定便"	&
+//		,	"出荷便"
+////ADD-E	2007.1.24
+//		this.Auto_Zero_Pack = True
+//		data = pf_zero_pack(data, this.Get_Column_len(dwo))
+//	Case Else
+//		this.Auto_Zero_Pack = False
+//End Choose
+//
+//This.Post Event zero_pack(row, dwo, data)	// 2005.08.31 ADD ゼロパック処理対応のため記述箇所を移動
+//
+////"担当者コード", ,	"部署コード" , "管理部署コード"	&
+////,	"入荷先コード", "仕入先コード", "倉庫コード", "外注先コード", "売上先コード", "納入倉庫コード", "運送会社コード", "納品先コード"	&
+//
+//		
+//
+/*---------------------------------------------------------------------------------------
+	工場部門コード取得
+---------------------------------------------------------------------------------------*/
+	SELECT	文字１
+	INTO		:ls_Kojo_Bumon_Code
+	FROM		会社情報マスタ
+	WHERE		コード	= 'M0001'
+	;
+
+
+/*---------------------------------------------------------------------------------------
+	共通 itemchanged 処理
+---------------------------------------------------------------------------------------*/
+ls_column = dwo.name
+Choose Case	ls_column
+	
+//	/*------------------------------------------------------------------------------------
+//		担当者コード
+//	------------------------------------------------------------------------------------*/
+//	Case	"担当者コード", "営業担当者コード", "事務担当者コード", "作業担当者コード", &
+//			"回収担当者コード", "仕入担当者コード", "確認担当者コード", "開始担当者コード", "終了担当者コード"
+//		Choose Case ls_column
+//			Case "担当者コード"
+//				ls_get_column_name = "担当者名称"
+//			Case "開始担当者コード"		//	scm_t02	売上集計表
+//				ls_get_column_name = "開始担当者名称"
+//			Case "終了担当者コード"		//	scm_t02	売上集計表
+//				ls_get_column_name = "終了担当者名称"
+//			Case "営業担当者コード"
+//				ls_get_column_name = "営業担当者名称"
+//			Case "事務担当者コード"
+//				ls_get_column_name = "事務担当者名称"
+//			Case "作業担当者コード"
+//				ls_get_column_name = "作業担当者名称"
+//			Case "回収担当者コード"
+//				ls_get_column_name = "回収担当者名称"
+//			Case "仕入担当者コード"
+//				ls_get_column_name = "仕入担当者名称"
+//			Case "確認担当者コード"
+//				ls_get_column_name = "確認担当者名称"
+//		End Choose
+//		
+//		If ls_prog_name <> "COM_M12" Then	/* com_m12 担当者マスタ */
+//			wf_mod_set(row, ls_column,	data, 1)										// セット
+//			lstr_tanto.担当者コード = pf_nvl_string(data, "")
+//			pf_get_tanto(lstr_tanto)													// ゲット
+//			wf_mod_set(row, ls_get_column_name, lstr_tanto.担当者名称, 1)	// セット
+//			
+//			/* scm_p01 販売目標入力、scm_p03 販売計画入力、scm_p05 仕入商品計画入力 */
+//			If ls_prog_name = "SCM_P01" Or ls_prog_name = "SCM_P03" Or ls_prog_name = "SCM_P05" Then
+//				wf_mod_set(row, "部署コード",		lstr_tanto.部署コード,	1)
+//				wf_mod_set(row, "部署名称",		lstr_tanto.部署名称,		1)
+//				lstr_busyo.部署コード = lstr_tanto.部署コード
+//				pf_get_busyo(lstr_busyo)
+//				wf_mod_set(row, "部門階層１",		lstr_busyo.部門階層[1],	1)
+//				wf_mod_set(row, "部門階層２",		lstr_busyo.部門階層[2],	1)
+//				wf_mod_set(row, "部門階層３",		lstr_busyo.部門階層[3],	1)
+//				wf_mod_set(row, "部門階層４",		lstr_busyo.部門階層[4],	1)
+//				wf_mod_set(row, "部門階層５",		lstr_busyo.部門階層[5],	1)
+//				wf_mod_set(row, "部門名称",		lstr_busyo.部門名称,		1)
+//			End If
+//		End If
+//				
+//	/*------------------------------------------------------------------------------------
+//		プログラム
+//	------------------------------------------------------------------------------------*/
+	Case	"プログラム"
+		If ls_prog_name <> "COM_M04" Then	/* com_m04 プログラムマスタ */
+			wf_mod_set(row,	"プログラム",		data,	1)								// セット
+			lstr_prog.プログラム = pf_nvl_string(data, "")
+			pf_get_prog(lstr_prog)															// ゲット
+			wf_mod_set(row,	"プログラム名称",	lstr_prog.プログラム名称, 1)	// セット
+		End If
+//		
+////	/*------------------------------------------------------------------------------------
+////		品目ブロック
+////	------------------------------------------------------------------------------------*/
+////	Case	"品目ブロック"
+////		
+////		if ls_prog_name <> "COM_M33" then		// 品目マスタ入力画面以外
+////			
+////			wf_mod_set(row,	"品目ブロック",	data,	1)		// セット
+////			
+////			//品目ブロック変更に伴う関連カラムのリセット
+////			wf_mod_set(row,	"品目番号",				"",	1)
+////			wf_mod_set(row,	"品目名称",				"",	1)
+////			wf_mod_set(row,	"最小単位コード",		"",	1)
+////			wf_mod_set(row,	"最小単位名称",		"",	1)
+////			wf_mod_set(row,	"最小単位区分",		"",	1)
+////			wf_mod_set(row,	"中間単位コード",		"",	1)
+////			wf_mod_set(row,	"中間単位名称",		"",	1)
+////			wf_mod_set(row,	"中間単位区分",		"",	1)
+////			wf_mod_set(row,	"最大単位コード",		"",	1)
+////			wf_mod_set(row,	"最大単位名称",		"",	1)
+////			wf_mod_set(row,	"最大単位区分",		"",	1)
+////			wf_mod_set(row,	"重量単位コード",		"",	1)
+////			wf_mod_set(row,	"重量単位名称",		"",	1)
+////			wf_mod_set(row,	"重量単位区分",		"",	1)
+////			
+////			wf_mod_set(row,	"開始品目番号",		"",	1)
+////			wf_mod_set(row,	"開始品目名称",		"",	1)
+////			wf_mod_set(row,	"終了品目番号",		"",	1)
+////			wf_mod_set(row,	"終了品目名称",		"",	1)
+////			
+////			wf_mod_set(row,	"中間単位入数",		"0",	2)
+////
+////			wf_mod_set(row,	"現品票管理区分",		"",	1)
+////			wf_mod_set(row,	"賞味期限管理区分",	"",	1)
+////			wf_mod_set(row,	"賞味期限月",			"0",	2)
+////			wf_mod_set(row,	"賞味期限日",			"0",	2)
+////			wf_mod_set(row,	"ロット番号管理区分","",	1)
+////			wf_mod_set(row,	"相手ロット管理区分","",	1)
+////			wf_mod_set(row,	"主原料管理区分",		"",	1)
+////
+////		end if
+////		
+////		//品目ブロック変更に伴う関連カラムのリセット
+////		wf_mod_set(row,	"単位コード",		"",	1)
+////		wf_mod_set(row,	"単位名称",			"",	1)
+////		wf_mod_set(row,	"単位区分",			"",	1)
+////		wf_mod_set(row,	"発注単位コード",	"",	1)
+////		wf_mod_set(row,	"発注単位名称",	"",	1)
+////		wf_mod_set(row,	"発注単位区分",	"",	1)
+////		wf_mod_set(row,	"単価単位コード",	"",	1)
+////		wf_mod_set(row,	"単価単位名称",	"",	1)
+////		wf_mod_set(row,	"単価単位区分",	"",	1)
+////		wf_mod_set(row,	"諸口区分",			"",	1)
+////		wf_mod_set(row,	"受入単位コード",	"",	1)
+////		wf_mod_set(row,	"受入単位名称",	"",	1)
+////		wf_mod_set(row,	"受入単位区分",	"",	1)
+////		
+////	Case	"子品目ブロック", "複写元品目ブロック", "複写先品目ブロック"	/* mes_m11 構成マスタで使用*/	&
+////			,"親品目ブロック", "出来高品目ブロック"
+////		
+////		Choose Case	dwo.name
+////			Case	"子品目ブロック"
+////				ls_moji	= "子"
+////			Case	"複写元品目ブロック"
+////				ls_moji	= "複写元"
+////			Case	"複写先品目ブロック"
+////				ls_moji	= "複写先"
+////			Case	"親品目ブロック"
+////				ls_moji	=	"親"
+////			Case	"出来高品目ブロック"
+////				ls_moji	=	"出来高"
+////		End Choose
+////		
+////		wf_mod_set(row,	ls_moji + "品目番号",			"",	1)
+////		wf_mod_set(row,	ls_moji + "品目名称",			"",	1)
+////		wf_mod_set(row,	ls_moji + "最小単位コード",	"",	1)
+////		wf_mod_set(row,	ls_moji + "最小単位名称",		"",	1)
+////		wf_mod_set(row,	ls_moji + "最小単位区分",		"",	1)
+////		wf_mod_set(row, 	ls_moji + "主原料管理区分",	"", 	1)
+////
+//		
+	/*------------------------------------------------------------------------------------
+		品目番号
+	------------------------------------------------------------------------------------*/
+	Case	"品目番号"
+		
+		if ls_prog_name <> "COM_M33" then
+			
+			If	wf_mod_get(row, "年月"	, ls_date,	4)	Then
+				lstr_hin.年月			= Datetime(Date(ls_date))
+			End if
+			
+			wf_mod_set(row,	"品目番号",		data,								1)			// セット
+			
+			wf_mod_get(row, 	"商品コード",	lstr_hin.商品コード,			1)
+			lstr_hin.品目番号 = pf_nvl_string(data, "")
+			pf_get_hin(lstr_hin)																	// ゲット
+			
+			wf_mod_set(row,	"品名",					lstr_hin.品名,							1)	// セット
+			wf_mod_set(row,	"資産種類",				lstr_hin.資産種類,					1)	// セット
+			If	lstr_hin.ret	Then
+				wf_mod_set(row,	"商品コード",			lstr_hin.商品コード,					1)
+				lstr_syohin.年月			= lstr_hin.年月
+				lstr_syohin.商品コード	= lstr_hin.商品コード
+				pf_get_syohin(lstr_syohin)
+				wf_mod_set(row,	"商品名称",				lstr_syohin.商品名称,				1)
+			End if
+//			wf_mod_set(row,	"最小単位コード",		lstr_hin.最小単位コード,			1)
+//			wf_mod_set(row,	"最小単位名称",		lstr_hin.最小単位名称,				1)
+//			wf_mod_set(row,	"最小単位区分",		lstr_hin.最小単位区分,				1)
+//			wf_mod_set(row,	"中間単位コード",		lstr_hin.中間単位コード,			1)
+//			wf_mod_set(row,	"中間単位名称",		lstr_hin.中間単位名称,				1)
+//			wf_mod_set(row,	"中間単位区分",		lstr_hin.中間単位区分,				1)
+//			wf_mod_set(row,	"最大単位コード",		lstr_hin.最大単位コード,			1)
+//			wf_mod_set(row,	"最大単位名称",		lstr_hin.最大単位名称,				1)
+//			wf_mod_set(row,	"最大単位区分",		lstr_hin.最大単位区分,				1)
+//			wf_mod_set(row,	"重量単位コード",		lstr_hin.重量単位コード,			1)
+//			wf_mod_set(row,	"重量単位名称",		lstr_hin.重量単位名称,				1)
+//			wf_mod_set(row,	"重量単位区分",		lstr_hin.重量単位区分,				1)
+//			wf_mod_set(row,	"中間単位入数",		string(lstr_hin.中間単位入数),	2)
+//			wf_mod_set(row,	"諸口区分",				lstr_hin.諸口区分,					1)
+//			wf_mod_set(row,	"現品票管理区分",		lstr_hin.現品票管理区分,			1)
+//			wf_mod_set(row,	"賞味期限管理区分",	lstr_hin.賞味期限管理区分,			1)
+//			wf_mod_set(row,	"賞味期限月",			string(lstr_hin.賞味期限月),		2)
+//			wf_mod_set(row,	"賞味期限日",			string(lstr_hin.賞味期限日),		2)
+//			wf_mod_set(row,	"ロット番号管理区分",lstr_hin.ロット番号管理区分,		1)
+//			wf_mod_set(row,	"相手ロット管理区分",lstr_hin.相手ロット管理区分,		1)
+//			wf_mod_set(row,	"主原料管理区分",		lstr_hin.主原料管理区分,			1)
+
+		end if
+		
+//		//品目番号変更に伴う関連カラムのリセット
+//		wf_mod_set(row,	"単位コード",		"",	1)
+//		wf_mod_set(row,	"単位名称",			"",	1)
+//		wf_mod_set(row,	"単位区分",			"",	1)
+//		wf_mod_set(row,	"発注単位コード",	"",	1)
+//		wf_mod_set(row,	"発注単位名称",	"",	1)
+//		wf_mod_set(row,	"発注単位区分",	"",	1)
+//		wf_mod_set(row,	"単価単位コード",	"",	1)
+//		wf_mod_set(row,	"単価単位名称",	"",	1)
+//		wf_mod_set(row,	"単価単位区分",	"",	1)
+//		wf_mod_set(row,	"受入単位コード",	"",	1)
+//		wf_mod_set(row,	"受入単位名称",	"",	1)
+//		wf_mod_set(row,	"受入単位区分",	"",	1)
+//		
+//	Case	"親品目番号", "子品目番号", "複写元品目番号", "複写先品目番号",	/* mes_m11 構成マスタで使用		*/	&
+//			"開始品目番号", "終了品目番号",									/* mes_m23 基準在庫設定マスタ	*/	&
+//			"出来高品目番号"
+//		
+//		Choose Case	dwo.name
+//			case	"親品目番号"
+//				ls_moji	= "親"
+//			Case	"子品目番号"
+//				ls_moji	= "子"
+//			Case	"複写元品目番号"
+//				ls_moji	= "複写元"
+//			Case	"複写先品目番号"
+//				ls_moji	= "複写先"
+//			Case	"開始品目番号"
+//				ls_moji	= "開始"
+//			Case	"終了品目番号"
+//				ls_moji	= "終了"
+//			Case	"出来高品目番号"
+//				ls_moji	= "出来高"
+//		End Choose
+//		
+////		Choose Case	dwo.name
+////			Case	"開始品目番号", "終了品目番号"
+////				wf_mod_get(row,	"品目ブロック",					lstr_hin.品目ブロック,	1)			// ゲット
+////			Case Else
+////				wf_mod_get(row,	ls_moji + "品目ブロック",		lstr_hin.品目ブロック,	1)			// ゲット
+////		End Choose
+//		
+//		wf_mod_set(row,	ls_moji + "品目番号",	data,	1)											// セット
+//		
+//		lstr_hin.品目番号 = pf_nvl_string(data, "")
+//		pf_get_hin(lstr_hin)												// ゲット
+//		
+//		wf_mod_set(row,	ls_moji + "品目名称",				lstr_hin.品目名称,			1)	// セット
+//		wf_mod_set(row,	ls_moji + "最小単位コード",		lstr_hin.最小単位コード,	1)
+//		wf_mod_set(row,	ls_moji + "最小単位名称",			lstr_hin.最小単位名称,		1)
+//		wf_mod_set(row,	ls_moji + "最小単位区分",			lstr_hin.最小単位区分,		1)
+//		
+//		wf_mod_set(row,	ls_moji + "主原料管理区分",		lstr_hin.主原料管理区分,	1)	/* mes_m11 構成マスタ */
+//		wf_mod_set(row,	"出庫実績計上区分",		lstr_hin.出庫実績計上区分,	1)	/* mes_m11 構成マスタ */
+//		wf_mod_set(row,	"投入実績計上区分",		lstr_hin.投入実績計上区分,	1)	/* mes_m11 構成マスタ */
+//		
+	/*------------------------------------------------------------------------------------
+		単位コード
+	------------------------------------------------------------------------------------*/
+	// 品目別単位マスタ検索
+//	Case	"単位コード",	"発注単位コード",	"単価単位コード", "廃棄単位コード", "移動単位コード", "振替単位コード", "受入単位コード"
+	Case	"単位コード",	"発注単位コード"		
+		Choose Case	dwo.name
+			Case	"単位コード"
+				ls_moji	= ""
+			Case	"発注単位コード"	/* mes_m01 購買仕入条件マスタ */
+				ls_moji	= "発注"
+//			Case	"単価単位コード"	/* mes_m01 購買仕入条件マスタ */
+//				ls_moji	= "単価"
+//			Case	"廃棄単位コード"	/* mes_z03 廃棄入力 */
+//				ls_moji	= "廃棄"
+//			Case	"移動単位コード"	/* mes_z02 在庫移動入力 */
+//				ls_moji	= "移動"
+//			Case	"振替単位コード"	/* mes_z05 経費振替入力 */
+//				ls_moji	= "振替"
+//			Case	"受入単位コード"
+//				ls_moji	= "受入"
+		End Choose
+		
+		wf_mod_set(row,	ls_moji + "単位コード",	data,	1)								// セット
+		
+		lstr_tani.単位コード	=	pf_nvl_string(data, "")
+		
+		If ls_prog_name <> "COM_M15" Then
+			
+			wf_mod_get(row,	"品目番号",			lstr_tani.品目番号,	1)
+			
+			If	wf_mod_get(row, "年月", ls_date, 4)	Then
+				lstr_tani.年月		= Datetime(Date(ls_date))
+			End if
+			
+			pf_get_hin_tani(lstr_tani)												// ゲット
+			
+			wf_mod_set(row,	ls_moji + "単位名称",	lstr_tani.単位名称,	1)			// セット
+			wf_mod_set(row,	ls_moji + "単位区分",	lstr_tani.単位区分,	1)
+		End If
+//		
+//	Case	"振替元単位コード", "振替先単位コード", "出来高単位コード"
+//		
+//		Choose Case	dwo.name
+//			Case	"振替元単位コード"
+//				ls_moji	= "振替元"
+//			Case	"振替先単位コード"
+//				ls_moji	= "振替先"
+//			Case	"出来高単位コード"
+//				ls_moji	= "出来高"
+//		End Choose
+//	
+//		wf_mod_set(row,	ls_moji + "単位コード",	data,	1)								// セット
+//		
+//		lstr_tani.単位コード	=	pf_nvl_string(data, "")
+//			
+////		wf_mod_get(row,	ls_moji + "品目ブロック",	lstr_tani.hin_block,	1)
+//		wf_mod_get(row,	ls_moji + "品目番号",		lstr_tani.hin_code,	1)
+//		pf_get_hin_tani(lstr_tani)												// ゲット
+//		
+//		wf_mod_set(row,	ls_moji + "単位名称",	lstr_tani.単位名称,	1)			// セット
+//		wf_mod_set(row,	ls_moji + "単位区分",	lstr_tani.単位区分,	1)
+//		
+	// 単位マスタ検索
+	Case	"最小単位コード", "中間単位コード", "最大単位コード"
+		
+		Choose Case	dwo.name
+			Case	"最小単位コード"
+				ls_moji	=	"最小"
+			Case	"中間単位コード"
+				ls_moji	=	"中間"
+			Case	"最大単位コード"
+				ls_moji	=	"最大"
+		End Choose
+		
+		wf_mod_set(row,	ls_moji + "単位コード",	data,	1)							// セット
+		
+		lstr_tani.単位コード	=	pf_nvl_string(data, "")
+		pf_get_tani(lstr_tani)																// ゲット
+		
+		wf_mod_set(row,	ls_moji + "単位名称",	lstr_tani.単位名称,	1)		// セット
+		wf_mod_set(row,	ls_moji + "単位区分",	lstr_tani.単位区分,	1)
+
+	Case	"重量単位コード"
+		wf_mod_set(row,	"重量単位コード",	data,	1)									// セット
+		
+		lstr_tani.単位コード	=	pf_nvl_string(data, "")
+		pf_get_jyuryo_tani(lstr_tani)														// ゲット
+		
+		wf_mod_set(row,	"重量単位名称",	lstr_tani.単位名称,	1)				// セット
+		wf_mod_set(row,	"重量単位区分",	lstr_tani.単位区分,	1)
+
+//    /*------------------------------
+//        取引先マスタ
+//    ------------------------------*/
+//	Case	"入荷先コード", "仕入先コード", "倉庫コード", "外注先コード", "売上先コード", "納入倉庫コード",    &
+//			"運送会社コード", "納品先コード", "取引先コード", "開始取引先コード", "終了取引先コード",    &
+//			"関連取引先コード", "請求先コード", "入金先コード", "出庫元倉庫コード", "出庫先倉庫コード", "支払先コード",    &
+//			"移動元倉庫コード", "移動先倉庫コード", "開始請求先コード", "終了請求先コード", "出荷倉庫コード",	&
+//			"開始売上先コード", "終了売上先コード", "開始納品先コード", "終了納品先コード", 	&
+//			"発注先コード", "得意先コード"        
+//		Choose Case dwo.name
+//			Case "納品先コード"
+//				ls_moji	= "納品先"
+//				lstr_torihiki.取引先区分[1]	= True
+//				
+//			Case "売上先コード"
+//				ls_moji	= "売上先"
+//				lstr_torihiki.取引先区分[2]	= True
+//				
+//			Case "請求先コード"
+//				ls_moji	= "請求先"
+//				lstr_torihiki.取引先区分[3]	= True
+//			Case "得意先コード"		/* scm_t13損益管理表	scm_t14損益計算書	scm_t15損益推移表 */
+//				ls_moji	= "得意先"
+//				lstr_torihiki.取引先区分[3]	= True
+//			Case "開始請求先コード"		/* scm_n04 売掛金年齢表 */
+//				ls_moji	= "開始請求先"
+//				lstr_torihiki.取引先区分[3]	= True
+//				
+//			Case "終了請求先コード"		/* scm_n04 売掛金年齢表 */
+//				ls_moji	= "終了請求先"
+//				lstr_torihiki.取引先区分[3]	= True
+//			Case "開始売上先コード"		/* scm_t02 売上集計表 */
+//				ls_moji	= "開始売上先"
+//				lstr_torihiki.取引先区分[2]	= True
+//				
+//			Case "終了売上先コード"		/* scm_t02 売上集計表 */
+//				ls_moji	= "終了売上先"
+//				lstr_torihiki.取引先区分[2]	= True
+//
+//			Case "開始納品先コード"		/* scm_t02 売上集計表 */
+//				ls_moji	= "開始納品先"
+//				lstr_torihiki.取引先区分[1]	= True
+//				
+//			Case "終了納品先コード"		/* scm_t02 売上集計表 */
+//				ls_moji	= "終了納品先"
+//				lstr_torihiki.取引先区分[1]	= True
+//			Case "入荷先コード"
+//				ls_moji	= "入荷先"
+//				lstr_torihiki.取引先区分[4]	= True
+//				
+//			Case "仕入先コード"
+//				ls_moji	= "仕入先"
+//				lstr_torihiki.取引先区分[5]	= True
+//				
+//			Case "支払先コード"
+//				ls_moji	= "支払先"
+//				lstr_torihiki.取引先区分[6]	= True
+//				
+//			Case "運送会社コード"
+//				ls_moji	= "運送会社"
+//				lstr_torihiki.取引先区分[7]	= True
+//				
+//			Case "倉庫コード"
+//				ls_moji	= "倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "納入倉庫コード"		/* mes_m23 基準在庫設定マスタ */
+//				ls_moji	= "納入倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "出庫元倉庫コード"
+//				ls_moji	= "出庫元倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "出庫先倉庫コード"
+//				ls_moji	= "出庫先倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "移動元倉庫コード"		/* mes_z02 在庫移動入力 */
+//				ls_moji	= "移動元倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "移動先倉庫コード"		/* mes_z02 在庫移動入力 */
+//				ls_moji	= "移動先倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case "外注先コード"
+//				ls_moji	= "外注先"
+//				lstr_torihiki.取引先区分[10]	= True
+//				
+//			Case "入金先コード"
+//				ls_moji	= "入金先"
+//				lstr_torihiki.取引先区分[11]	= True
+//				
+//			Case "取引先コード"
+//				ls_moji	= "取引先"
+//				Choose Case ls_prog_name
+//					/* scm_m06 取引条件マスタ、scm_m04 売上単価マスタ、scm_pw_search_tanka 単価照会 */
+//					Case "SCM_M06", "SCM_M04", "SCM_PW_SEARCH_TANKA"
+//						wf_mod_get(row, "区分",			ls_kbn, 1)
+//						wf_mod_get(row, "単価区分",	ls_tanka_kbn, 1)
+//						If ls_kbn = "1" And (ls_tanka_kbn = "1" Or ls_tanka_kbn = "2" Or ls_tanka_kbn = "9") Then
+//							lstr_torihiki.取引先区分[1]	= True
+//							lstr_torihiki.取引先区分[2]	= True
+//						Else
+//							lstr_torihiki.取引先区分[2]	= True
+//						End If
+//					Case "SCM_P01" /* scm_p01 販売目標入力 */
+//						wf_mod_get(row, "売上先", ls_uriage, 1)
+//						wf_mod_get(row, "納品先", ls_nouhin, 1)
+//						If ls_nouhin = "1" Then
+//							lstr_torihiki.取引先区分[1] = True		// 納品先
+//						End If
+//						If ls_uriage = "1" Then
+//							lstr_torihiki.取引先区分[2] = True		// 売上先
+//						End If
+//				End Choose
+//				
+//			Case "開始取引先コード"		/* scm_m05 口座マスタ */
+//				ls_moji	= "開始取引先"
+//				
+//			Case "終了取引先コード"		/* scm_m05 口座マスタ */
+//				ls_moji	= "終了取引先"
+//				
+//			Case "関連取引先コード"
+//				ls_moji	= "関連取引先"
+//				
+//			Case "出荷倉庫コード"
+//				ls_moji	= "出荷倉庫"
+//				lstr_torihiki.取引先区分[9]	= True
+//				
+//			Case	"発注先コード"
+//				ls_moji	= "発注先"
+//				lstr_torihiki.取引先区分[5]	= True
+//
+//		End Choose
+//		
+//		wf_mod_set(row,	ls_moji + "コード",	data,	1)
+//		lstr_torihiki.取引先コード = pf_nvl_string(data, "")
+//		pf_get_torihiki(lstr_torihiki)
+//
+//		/*****************************************************
+//		                 共　通　部　分
+//		*****************************************************/
+//		wf_mod_set(row,	ls_moji + "略称",			lstr_torihiki.取引先略称,			1)
+//		wf_mod_set(row,	ls_moji + "名称",			lstr_torihiki.取引先略称,			1)
+//		wf_mod_set(row,	ls_moji + "正式名称",	lstr_torihiki.取引先正式名称１,	1)
+//		wf_mod_set(row,	ls_moji + "正式名称１",	lstr_torihiki.取引先正式名称１,	1)
+//		wf_mod_set(row,	ls_moji + "正式名称２",	lstr_torihiki.取引先正式名称２,	1)
+//
+//		wf_mod_set(row,	"納入便コード",		"",	1)
+//		wf_mod_set(row,	"納入便名称",			"",	1)
+//		wf_mod_set(row,	"期間納入便コード",	"",	1)
+//		wf_mod_set(row,	"期間納入便名称",		"",	1)
+//
+//		/*****************************************************
+// 		              ここから機能別の処理
+//		*****************************************************/
+//		/* scm_j01 受注入力、scm_u01 売上入力、scm_p07 特売情報入力 */
+//		If ls_prog_name = "SCM_J01" Or ls_prog_name = "SCM_U01" Or ls_prog_name = "SCM_S02" Or ls_prog_name = "SCM_P07" Then
+//			wf_mod_set(row,	"郵便番号１",				lstr_torihiki.郵便番号１,					1)
+//			wf_mod_set(row,	"郵便番号２",				lstr_torihiki.郵便番号２,					1)
+//			wf_mod_set(row,	"住所１",					lstr_torihiki.住所１,						1)
+//			wf_mod_set(row,	"住所２",					lstr_torihiki.住所２,						1)
+//			wf_mod_set(row,	"電話番号",					lstr_torihiki.電話番号,						1)
+//			wf_mod_set(row,	"請求先コード",			lstr_torihiki.取引先売上.請求先コード,	1)
+//			Choose Case dwo.name
+//				Case "納品先コード"
+//					wf_mod_set(row,	"雑口区分",				pf_nvl_string(lstr_torihiki.雑口区分, "0"),	1)
+//					wf_mod_set(row,	"売上先コード",		lstr_torihiki.取引先売上.売上先コード,			1)
+//					wf_mod_set(row,	"営業担当者コード",	lstr_torihiki.取引先売上.営業担当者コード,	1)
+//					wf_mod_set(row,	"事務担当者コード",	lstr_torihiki.取引先売上.事務担当者コード,	1)
+//			End Choose
+//		End If
+//		
+//		/* scm_p03 販売計画入力、scm_p05 仕入商品計画入力 */
+//		If ls_prog_name = "SCM_P03" Or ls_prog_name = "SCM_P05" Then
+//			Choose Case dwo.name
+//				Case "納品先コード", "売上先コード"
+//					wf_mod_set(row,	"担当者コード",	lstr_torihiki.取引先売上.営業担当者コード,	1)
+//					lstr_tanto.担当者コード = lstr_torihiki.取引先売上.営業担当者コード
+//					pf_get_tanto(lstr_tanto)
+//					wf_mod_set(row,	"担当者名称",	lstr_tanto.担当者名称,	1)
+//					wf_mod_set(row,	"部署コード",	lstr_tanto.部署コード,	1)
+//					wf_mod_set(row,	"部署名称",		lstr_tanto.部署名称,		1)
+//					lstr_busyo.部署コード = lstr_tanto.部署コード
+//					pf_get_busyo(lstr_busyo)
+//					wf_mod_set(row,	"部門階層１",	lstr_busyo.部門階層[1],	1)
+//					wf_mod_set(row,	"部門階層２",	lstr_busyo.部門階層[2],	1)
+//					wf_mod_set(row,	"部門階層３",	lstr_busyo.部門階層[3],	1)
+//					wf_mod_set(row,	"部門階層４",	lstr_busyo.部門階層[4],	1)
+//					wf_mod_set(row,	"部門階層５",	lstr_busyo.部門階層[5],	1)
+//					wf_mod_set(row,	"部門名称",		lstr_busyo.部門名称,		1)
+//			End Choose
+//		End If
+//
+//		/* scm_h01 発注確定入力 */
+//		If dwo.name = "入荷先コード" Then
+//			ls_siire = lstr_torihiki.取引先仕入.仕入先コード
+//			wf_mod_set(row,	"仕入先コード",	ls_siire,	1)
+//
+//			lstr_torihiki = lstr_torihiki_clr
+//			lstr_torihiki.取引先コード = ls_siire
+//
+//			pf_get_torihiki(lstr_torihiki)
+//			wf_mod_set(row,	"仕入先略称",		lstr_torihiki.取引先略称,	1)
+//
+//			wf_mod_set(row,	"開始納入予定便",		"",	1)
+//			wf_mod_set(row,	"終了納入予定便",		"",	1)
+//			wf_mod_set(row,	"納入予定便",			"",	1)
+//		End If
+//		
+//		/* scm_em05 ＥＤＩ店舗変換マスタ */
+//		If ls_prog_name = "SCM_EM05" Then
+//			wf_mod_set(row,	"略式名称１",	leftc(lstr_torihiki.取引先略称, 20),	1)
+//			wf_mod_set(row,	"略式名称２",	leftc(lstr_torihiki.取引先略称, 6),		1)
+//		end if
+//
+//	/*------------------------------------------------------------------------------------
+//		部署
+//	------------------------------------------------------------------------------------*/
+//	Case	"部署コード", "管理部署コード", "移動元管理部署コード", "移動先管理部署コード", "開始部署コード", "終了部署コード"
+//		Choose Case ls_column
+//			Case "部署コード"
+//				ls_get_column_name = "部署名称"
+//			Case "開始部署コード"		/* scm_t02	売上集計表 */
+//				ls_get_column_name = "開始部署名称"
+//			Case "終了部署コード"		/* scm_t02	売上集計表 */
+//				ls_get_column_name = "終了部署名称"
+//			Case "管理部署コード"
+//				ls_get_column_name = "管理部署名称"
+//			Case "移動元管理部署コード"
+//				ls_get_column_name = "移動元管理部署名称"
+//			Case "移動先管理部署コード"
+//				ls_get_column_name = "移動先管理部署名称"
+//		End Choose
+//		
+//		If ls_prog_name <> "COM_M11" Then	/* com_m11 部署マスタ */
+//			wf_mod_set(row,	ls_column,	data,	1)
+//			lstr_busyo.部署コード	=	pf_nvl_string(data, "")
+//			pf_get_busyo(lstr_busyo)
+//			wf_mod_set(row, ls_get_column_name, lstr_busyo.部署名称, 1)
+//			
+//			/* scm_p01 販売目標入力、scm_p03 販売計画入力、scm_p05 仕入商品計画入力 */
+//			If ls_prog_name = "SCM_P01" Or ls_prog_name = "SCM_P03" Or ls_prog_name = "SCM_P05" Then
+//				wf_mod_set(row, "部門階層１", 	lstr_busyo.部門階層[1], 1)
+//				wf_mod_set(row, "部門階層２", 	lstr_busyo.部門階層[2], 1)
+//				wf_mod_set(row, "部門階層３", 	lstr_busyo.部門階層[3], 1)
+//				wf_mod_set(row, "部門階層４", 	lstr_busyo.部門階層[4], 1)
+//				wf_mod_set(row, "部門階層５", 	lstr_busyo.部門階層[5], 1)
+//				wf_mod_set(row, "部門名称",		lstr_busyo.部門名称, 1)
+//				wf_mod_set(row, "担当者コード",	"", 1)
+//				wf_mod_set(row, "担当者名称",		"", 1)
+//			End If
+//		End If
+//		
+//	/*------------------------------------------------------------------------------------
+//		出荷便
+//	------------------------------------------------------------------------------------*/
+//	Case	"便コード", "出荷便"
+//		Choose Case ls_column
+//			Case "便コード"
+//				ls_get_column_name = "便名称"
+//			Case "出荷便"
+//				ls_get_column_name = "出荷便名称"
+//		End Choose
+//		
+//		lstr_bin.便コード	=	pf_nvl_string(data, "")
+//		pf_get_bin(lstr_bin)
+//		wf_mod_set(row, ls_get_column_name, lstr_bin.便名称, 1)
+//		
+//		Choose Case ls_prog_name
+//			/* scm_d03:納品書、						scm_c04:出荷チェック、			scm_d06:出荷確定、			scm_c03:出荷調整	*/
+//			/* scm_c02:製品出荷欠品不足リスト、	scm_d01:出荷予定一覧表、		scm_d02:出荷指示書、			scm_d05:荷札		*/
+//			/*	scm_d07:出荷一覧、					scm_d08:出荷一覧(運送便別)、	scm_d11:出荷明細表									*/
+//			Case	"SCM_D03", "SCM_C04", "SCM_D06", "SCM_C03", "SCM_C02", "SCM_D01", "SCM_D02", "SCM_D05", 		&
+//					"SCM_D07", "SCM_D08", "SCM_D11" 				
+//				// 出荷倉庫
+//				lstr_torihiki					 = lstr_torihiki_clr
+//				lstr_torihiki.取引先区分[9] = TRUE
+//				lstr_torihiki.取引先コード	 = lstr_bin.出荷倉庫コード
+//				pf_get_torihiki(lstr_torihiki)
+//				wf_mod_set(row, "出荷倉庫コード",	lstr_torihiki.取引先コード, 1)
+//				wf_mod_set(row, "出荷倉庫略称",		lstr_torihiki.取引先略称,	 1)
+//				
+//				// 運送会社
+//				lstr_torihiki					 = lstr_torihiki_clr
+//				lstr_torihiki.取引先区分[7] = TRUE
+//				lstr_torihiki.取引先コード	 = lstr_bin.運送会社コード
+//				pf_get_torihiki(lstr_torihiki)
+//				wf_mod_set(row, "運送会社コード", lstr_torihiki.取引先コード, 1)
+//				wf_mod_set(row, "運送会社略称",	 lstr_torihiki.取引先略称,	  1)
+//		End Choose
+//
+	/*------------------------------------------------------------------------------------
+		品名区分01～20
+	------------------------------------------------------------------------------------*/
+	Case	"品名区分コード１",	 "品名区分コード２",	  "品名区分コード３",   "品名区分コード４",   "品名区分コード５",		&
+			"品名区分コード６",	 "品名区分コード７",   "品名区分コード８",   "品名区分コード９",   "品名区分コード１０",	&
+			"品名区分コード１１", "品名区分コード１２", "品名区分コード１３", "品名区分コード１４", "品名区分コード１５",	&
+			"品名区分コード１６", "品名区分コード１７", "品名区分コード１８", "品名区分コード１９", "品名区分コード２０"
+			
+			Choose Case dwo.name
+				Case	"品名区分コード１"
+					ls_moji 			= "01"
+					ls_hinkbn_no	= "１"
+				Case	"品名区分コード２"
+					ls_moji 			= "02"
+					ls_hinkbn_no	= "２"
+				Case	"品名区分コード３"
+					ls_moji 			= "03"
+					ls_hinkbn_no	= "３"
+				Case	"品名区分コード４"
+					ls_moji 			= "04"
+					ls_hinkbn_no	= "４"
+				Case	"品名区分コード５"
+					ls_moji 			= "05"
+					ls_hinkbn_no	= "５"
+				Case	"品名区分コード６"
+					ls_moji 			= "06"
+					ls_hinkbn_no	= "６"
+				Case	"品名区分コード７"
+					ls_moji 			= "07"
+					ls_hinkbn_no	= "７"
+				Case	"品名区分コード８"
+					ls_moji 			= "08"
+					ls_hinkbn_no	= "８"
+				Case	"品名区分コード９"
+					ls_moji 			= "09"
+					ls_hinkbn_no	= "９"
+				Case	"品名区分コード１０"
+					ls_moji 			= "10"
+					ls_hinkbn_no	= "１０"
+				Case	"品名区分コード１１"
+					ls_moji 			= "11"
+					ls_hinkbn_no	= "１２"
+				Case	"品名区分コード１２"
+					ls_moji 			= "12"
+					ls_hinkbn_no	= "１２"
+				Case	"品名区分コード１３"
+					ls_moji 			= "13"
+					ls_hinkbn_no	= "１３"
+				Case	"品名区分コード１４"
+					ls_moji 			= "14"
+					ls_hinkbn_no	= "１４"
+				Case	"品名区分コード１５"
+					ls_moji 			= "15"
+					ls_hinkbn_no	= "１５"
+				Case	"品名区分コード１６"
+					ls_moji 			= "16"
+					ls_hinkbn_no	= "１６"
+				Case	"品名区分コード１７"
+					ls_moji 			= "17"
+					ls_hinkbn_no	= "１７"
+				Case	"品名区分コード１８"
+					ls_moji 			= "18"
+					ls_hinkbn_no	= "１８"
+				Case	"品名区分コード１９"
+					ls_moji 			= "19"
+					ls_hinkbn_no	= "１９"
+				Case	"品名区分コード２０"
+					ls_moji 			= "20"
+					ls_hinkbn_no	= "２０"
+			End Choose
+//			
+////			If ls_prog_name = "MES_M35" Then
+////				//アレルゲン情報参照
+////				wf_mod_get(row,"子品目ブロック",lstr_hinkubun.品目ブロック,1)
+////			Else
+////				wf_mod_get(row,"品目ブロック",lstr_hinkubun.品目ブロック,1)
+////			End If
+//			
+			lstr_hinkubun.品名区分 = ls_moji
+			
+			lstr_hinkubun.品名区分コード = pf_nvl_string(data, "")
+			
+			If lstr_hinkubun.品名区分コード = "00" Then
+				wf_mod_set(row, "品名区分名称" + ls_hinkbn_no, "", 1)
+			Else
+				pf_get_hinkubun(lstr_hinkubun)
+				wf_mod_set(row, "品名区分コード" + ls_hinkbn_no, lstr_hinkubun.品名区分コード, 1)
+				wf_mod_set(row, "品名区分名称" + ls_hinkbn_no, lstr_hinkubun.品名区分名称, 1)
+			End If
+//	/*------------------------------------------------------------------------------------
+//		住所
+//	------------------------------------------------------------------------------------*/
+//	Case	"郵便番号１", "郵便番号２"
+//		Choose Case	dwo.name
+//			Case	"郵便番号１"
+//				lstr_address.郵便番号1 = pf_nvl_string(data, "")
+//				wf_mod_get(row,	"郵便番号２",	lstr_address.郵便番号2,	1)
+//			Case	"郵便番号２"
+//				lstr_address.郵便番号2 = pf_nvl_string(data, "")
+//				wf_mod_get(row,	"郵便番号１",	lstr_address.郵便番号1,	1)
+//		End Choose
+//		pf_get_address(lstr_address)
+//		
+//		wf_mod_set(row, "住所１", lstr_address.住所, 1)
+//	
+//	/*------------------------------------------------------------------------------------
+//		部門階層
+//	------------------------------------------------------------------------------------*/
+//	Case "部門階層１", "部門階層２", "部門階層３", "部門階層４", "部門階層５"
+//
+//		wf_mod_get(row,	"部門階層１",	lstr_bumon.code1,	1)
+//		wf_mod_get(row,	"部門階層２",	lstr_bumon.code2,	1)
+//		wf_mod_get(row,	"部門階層３",	lstr_bumon.code3,	1)
+//		wf_mod_get(row,	"部門階層４",	lstr_bumon.code4,	1)
+//		wf_mod_get(row,	"部門階層５",	lstr_bumon.code5,	1)
+//		
+//		lstr_bumon.code1 = pf_nvl_string(lstr_bumon.code1, "00")
+//		lstr_bumon.code2 = pf_nvl_string(lstr_bumon.code2, "00")
+//		lstr_bumon.code3 = pf_nvl_string(lstr_bumon.code3, "00")
+//		lstr_bumon.code4 = pf_nvl_string(lstr_bumon.code4, "00")
+//		lstr_bumon.code5 = pf_nvl_string(lstr_bumon.code5, "00")
+//		
+//		Choose Case dwo.name
+//			Case "部門階層１"
+//				lstr_bumon.code1 = data
+//			Case "部門階層２"
+//				lstr_bumon.code2 = data
+//			Case "部門階層３"
+//				lstr_bumon.code3 = data
+//			Case "部門階層４"
+//				lstr_bumon.code4 = data
+//			Case "部門階層５"
+//				lstr_bumon.code5 = data
+//		End Choose
+//		
+//		If pf_get_bumon(lstr_bumon) = True Then
+//			Choose Case lstr_bumon.level
+//				Case 1
+//					ls_bumon = lstr_bumon.name1
+//				Case 2
+//					ls_bumon = lstr_bumon.name2
+//				Case 3
+//					ls_bumon = lstr_bumon.name3
+//				Case 4
+//					ls_bumon = lstr_bumon.name4
+//				Case 5
+//					ls_bumon = lstr_bumon.name5
+//			End Choose
+//			wf_mod_set(row, "部門名称", ls_bumon, 1)
+//			wf_mod_set(row, "部門階層１", lstr_bumon.code1, 1)
+//			wf_mod_set(row, "部門階層２", lstr_bumon.code2, 1)
+//			wf_mod_set(row, "部門階層３", lstr_bumon.code3, 1)
+//			wf_mod_set(row, "部門階層４", lstr_bumon.code4, 1)
+//			wf_mod_set(row, "部門階層５", lstr_bumon.code5, 1)
+//		Else
+//			wf_mod_set(row, "部門名称", "", 1)
+//		End if
+//		/* scm_p01 販売目標入力、scm_p03 販売計画入力、scm_p05 仕入商品計画入力 */
+//		If ls_prog_name = "SCM_P01" Or ls_prog_name = "SCM_P03" Or ls_prog_name = "SCM_P05" Then
+//			wf_mod_set(row, "部署コード",		"", 1)
+//			wf_mod_set(row, "部署名称",		"", 1)
+//			wf_mod_set(row, "担当者コード",	"", 1)
+//			wf_mod_set(row, "担当者名称",		"", 1)
+//		End If
+	/*------------------------------------------------------------------------------------
+		取引区分
+	------------------------------------------------------------------------------------*/
+	Case	"取引区分"
+		If ls_prog_name <> "COM_M02" Then	/* com_m02 取引区分マスタ */
+			lstr_tkubun.取引区分 = data
+			
+//			Choose Case ls_prog_name
+//				Case	"MES_H01"
+//					lstr_tkubun.発注画面 = "1"
+//				Case	"SCM_J01"
+//					lstr_tkubun.受注画面 = "1"
+//				Case	"SCM_U01", "SCM_ES12"
+//					lstr_tkubun.売上画面 = "1"
+//				Case	"MES_N01"
+//					lstr_tkubun.受入画面 = "1"
+//				Case	"SCM_S01"
+//					lstr_tkubun.仕入画面 = "1"
+//				Case	"SCM_N01"
+//					lstr_tkubun.入金画面 = "1"
+//			End Choose
+			
+			pf_get_tkubun(lstr_tkubun)
+			
+			wf_mod_set(row, "取引区分名",	lstr_tkubun.取引区分名, 1)
+//			wf_mod_set(row, "商品入力区分",	lstr_tkubun.商品入力区分, 1)
+//			wf_mod_set(row, "数量入力区分",	lstr_tkubun.数量入力区分, 1)
+//			wf_mod_set(row, "単価入力区分",	lstr_tkubun.単価入力区分, 1)
+//			wf_mod_set(row, "金額入力区分",	lstr_tkubun.金額入力区分, 1)
+//			wf_mod_set(row, "倉庫入力区分",	lstr_tkubun.倉庫入力区分, 1)
+//			wf_mod_set(row, "固定区分",		lstr_tkubun.固定区分, 1)
+//			wf_mod_set(row, "符号区分",		lstr_tkubun.符号区分, 1)
+//			wf_mod_set(row, "締売仕更新",		lstr_tkubun.締売仕更新, 1)
+//			wf_mod_set(row, "掛売仕更新",		lstr_tkubun.掛売仕更新, 1)
+//			wf_mod_set(row, "締入支更新",		lstr_tkubun.締入支更新, 1)
+//			wf_mod_set(row, "掛入支更新",		lstr_tkubun.掛入支更新, 1)
+//
+//			If ls_prog_name = "MES_H01" Then	/* mes_h01 発注確定入力 */
+//				Choose Case lstr_tkubun.固定区分
+//					Case	"2"
+//						wf_mod_set(row, "横持ち指図区分","1", 1)
+//					Case Else
+//						wf_mod_set(row, "横持ち指図区分","0", 1)
+//				End Choose
+//			End If
+			
+		End If
+//		
+//	Case	"売上取引区分"
+//		lstr_tkubun.取引区分 = data
+//		lstr_tkubun.直送売上画面 = "1"
+//		
+//		pf_get_tkubun(lstr_tkubun)
+//		
+//		wf_mod_set(row, "売上取引区分名称",	lstr_tkubun.取引区分名称, 1)
+//		wf_mod_set(row, "売上商品入力区分",	lstr_tkubun.商品入力区分, 1)
+//		wf_mod_set(row, "売上数量入力区分",	lstr_tkubun.数量入力区分, 1)
+//		wf_mod_set(row, "売上単価入力区分",	lstr_tkubun.単価入力区分, 1)
+//		wf_mod_set(row, "売上金額入力区分",	lstr_tkubun.金額入力区分, 1)
+//		wf_mod_set(row, "売上固定区分",		lstr_tkubun.固定区分, 1)
+//		wf_mod_set(row, "売上符号区分",		lstr_tkubun.符号区分, 1)
+//		wf_mod_set(row, "売上締売仕更新",	lstr_tkubun.締売仕更新, 1)
+//		wf_mod_set(row, "売上掛売仕更新",	lstr_tkubun.掛売仕更新, 1)
+//
+//	Case	"仕入取引区分"
+//		lstr_tkubun.取引区分 = data
+//		lstr_tkubun.直送仕入画面 = "1"
+//		
+//		pf_get_tkubun(lstr_tkubun)
+//		
+//		wf_mod_set(row, "仕入取引区分名称",	lstr_tkubun.取引区分名称, 1)
+//		wf_mod_set(row, "仕入商品入力区分",	lstr_tkubun.商品入力区分, 1)
+//		wf_mod_set(row, "仕入数量入力区分",	lstr_tkubun.数量入力区分, 1)
+//		wf_mod_set(row, "仕入単価入力区分",	lstr_tkubun.単価入力区分, 1)
+//		wf_mod_set(row, "仕入金額入力区分",	lstr_tkubun.金額入力区分, 1)
+//		wf_mod_set(row, "仕入固定区分",		lstr_tkubun.固定区分, 1)
+//		wf_mod_set(row, "仕入符号区分",		lstr_tkubun.符号区分, 1)
+//		wf_mod_set(row, "仕入締売仕更新",	lstr_tkubun.締売仕更新, 1)
+//		wf_mod_set(row, "仕入掛売仕更新",	lstr_tkubun.掛売仕更新, 1)
+//		
+//	/*------------------------------------------------------------------------------------
+//		分類
+//	------------------------------------------------------------------------------------*/
+//	Case "分類"
+//		If ls_prog_name <> "COM_M22" Then	/* com_m22 取引先分類マスタ */
+//			wf_mod_set(row, "分類", data, 1)
+//			wf_mod_set(row, "分類コード", "", 1)
+//			wf_mod_set(row, "分類名称", "", 1)
+//		End If
+//		
+//	Case "分類コード","分類コード開始","分類コード終了", & 
+//		 "分類コード１","分類コード２","分類コード３","分類コード４","分類コード５", &
+//		 "分類コード６","分類コード７","分類コード８","分類コード９"
+//		If ls_prog_name <> "COM_M22" Then	/* com_m22 取引先分類マスタ */
+//			Choose Case dwo.name
+//				Case	"分類コード"
+//					wf_mod_get(row,	"分類",	lstr_bunrui.bun, 1)
+//					ls_moji = ""
+//				Case	"分類コード開始"	//scm_t02	売上集計表
+//					wf_mod_get(row,	"分類",	lstr_bunrui.bun, 1)
+//					ls_moji = "開始"
+//				Case	"分類コード終了"	//scm_t02	売上集計表
+//					wf_mod_get(row,	"分類",	lstr_bunrui.bun, 1)
+//					ls_moji = "終了"
+//				Case	"分類コード１"
+//					lstr_bunrui.bun = "1"
+//					ls_moji = "１"
+//				Case	"分類コード２"
+//					lstr_bunrui.bun = "2"
+//					ls_moji = "２"
+//				Case	"分類コード３"
+//					lstr_bunrui.bun = "3"
+//					ls_moji = "３"
+//				Case	"分類コード４"
+//					lstr_bunrui.bun = "4"
+//					ls_moji = "４"
+//				Case	"分類コード５"
+//					lstr_bunrui.bun = "5"
+//					ls_moji = "５"
+//				Case	"分類コード６"
+//					lstr_bunrui.bun = "6"
+//					ls_moji = "６"
+//				Case	"分類コード７"
+//					lstr_bunrui.bun = "7"
+//					ls_moji = "７"
+//				Case	"分類コード８"
+//					lstr_bunrui.bun = "8"
+//					ls_moji = "８"
+//				Case	"分類コード９"
+//					lstr_bunrui.bun = "9"
+//					ls_moji = "９"
+//			End Choose
+//			lstr_bunrui.code = Trim(data)
+//			If pf_get_bunrui(lstr_bunrui) Then
+//				wf_mod_set(row, "分類名称" + ls_moji, lstr_bunrui.name, 1)
+//			Else
+//				wf_mod_set(row, "分類名称" + ls_moji, "", 1)
+//			End If
+//		End If
+//		
+////	/*------------------------------------------------------------------------------------
+////		理由		2005.10.20	scm_pu_dw,mes_pu_dwにそれぞれ記述するよう変更
+////	------------------------------------------------------------------------------------*/
+////	Case	"理由コード", "ロス理由コード", "返品理由コード"
+////		Choose Case ls_column
+////			Case "理由コード"
+////				ls_moji	= ""
+////			Case "ロス理由コード"
+////				ls_moji	= "ロス"
+////			Case "返品理由コード"
+////				ls_moji	= "返品"
+////				lstr_riyu.理由区分 = "S5"
+////		End Choose
+////		If ls_prog_name <> "COM_M16" Then	/* com_m16 理由マスタ */
+////			wf_mod_get(row, ls_moji	+ "理由区分",	lstr_riyu.理由区分, 1)
+////			wf_mod_set(row, ls_moji + "理由コード",	data, 1)
+////			lstr_riyu.理由コード = pf_nvl_string(data, "")
+////			pf_get_riyu(lstr_riyu)
+////			wf_mod_set(row, ls_moji + "理由名称", lstr_riyu.理由名称, 1)
+////		End If
+//		
+//	/*------------------------------------------------------------------------------------
+//		科目コード
+//	------------------------------------------------------------------------------------*/
+Case	"科目コード"
+		If ls_prog_name <> "COM_M24" Then		//科目マスタ
+			lstr_kamoku.科目コード	= pf_nvl_String(data, "")
+			pf_get_kamoku(lstr_kamoku)
+			wf_mod_set(row, "科目名称", lstr_kamoku.科目名称, 1)
+		End If
+
+//	Case	"科目コード"
+////		wf_mod_set(row, "科目コード",	Left(data, 5), 1)
+//		wf_mod_set(row, "科目コード",	data, 1)
+//		lstr_kamoku.科目コード = pf_nvl_string(data, "")
+//		Choose Case ls_prog_name
+//			/* scm_m05 口座マスタ */
+//			Case "SCM_M05"
+//				lstr_kamoku.管理区分 = 5		// 請求・支払管理のみ
+//			/* scm_u01 売上入力、scm_pw_search_uriage 売上データ検索 */
+//			Case "SCM_U01", "SCM_PW_SEARCH_URIAGE", &
+//					"SCM_N01", &
+//					"SCM_Y01", "SCM_Y02", "SCM_Y04", "SCM_Y05", "SCM_Y06", &
+//					"SCM_W01", "SCM_W02"
+//				lstr_kamoku.管理区分 = 1		// 請求管理のみ
+//			/* scm_s01 仕入入力、scm_pw_search_siire 仕入データ検索、買掛金管理表 */
+//			Case "SCM_X01", "SCM_S01", "SCM_PW_SEARCH_SIIRE", "SCM_X03"
+//				lstr_kamoku.管理区分 = 2		// 支払管理のみ				
+//		End Choose
+//		pf_get_kamoku(lstr_kamoku)
+//		wf_mod_set(row, "科目名称",	lstr_kamoku.科目名称, 1)
+//		
+//	Case	"売上科目コード", "戻り科目コード", "値引科目コード", "棚卸科目コード"
+//		Choose Case ls_column
+//			Case "売上科目コード"
+//				ls_get_column_name	= "売上科目名称"
+//				If ls_prog_name = "SCM_S02" Then //直送入力
+//					lstr_kamoku.管理区分 = 1		// 請求管理のみ
+//				Else
+//					lstr_kamoku.科目区分	= "3"		// 売上
+//				End If
+//			Case "戻り科目コード"
+//				ls_get_column_name	= "戻り科目名称"
+//				lstr_kamoku.科目区分	= "3"		// 売上
+//			Case "値引科目コード"
+//				ls_get_column_name	= "値引科目名称"
+//				lstr_kamoku.科目区分	= "3"		// 売上
+//			Case "棚卸科目コード"
+//				ls_get_column_name	= "棚卸科目名称"
+//				lstr_kamoku.科目区分	= "5"		// 棚卸
+//		End Choose
+//		
+//		wf_mod_set(row, ls_column,	data, 1)
+//		lstr_kamoku.科目コード = pf_nvl_string(data, "")
+//		If ls_prog_name = "SCM_S02" Then //直送入力
+//			pf_get_kamoku(lstr_kamoku)
+//		Else
+//			pf_get_kamoku_kbn(lstr_kamoku)
+//		End If
+//		wf_mod_set(row, ls_get_column_name,	lstr_kamoku.科目名称, 1)
+//
+//	Case	"仕入科目コード", "戻し科目コード", "勘定科目", "入金科目コード"
+//		Choose Case ls_column
+//			Case "仕入科目コード"
+//				ls_get_column_name			= "仕入科目名称"
+//				If ls_prog_name = "SCM_S02" Then //直送入力
+//					lstr_kamoku.管理区分 = 2		// 支払管理のみ
+//				Else
+//					lstr_kamoku.kamoku_kbn[1]	= "4"		// 仕入
+//					lstr_kamoku.kamoku_kbn[2]	= "6"		// 販売経費
+//					lstr_kamoku.kamoku_kbn[3]	= "7"		// 製造経費
+//				End If
+//			Case "戻し科目コード"
+//				ls_get_column_name			= "戻し科目名称"
+//				lstr_kamoku.kamoku_kbn[1]	= "4"		// 仕入
+//				lstr_kamoku.kamoku_kbn[2]	= "6"		// 販売経費
+//				lstr_kamoku.kamoku_kbn[3]	= "7"		// 製造経費
+//			Case "勘定科目"
+//				ls_get_column_name			= "勘定科目名称"
+//				/* mes_z05 経費振替入力、mes_z15 経費振替入力照会 */
+//				If ls_prog_name = "MES_Z05" Or ls_prog_name = "MES_Z15" Then
+//					lstr_kamoku.kamoku_kbn[1]	= "7"
+//				End If
+//				/* scm_z05 経費振替入力、scm_z15 経費振替入力照会 */
+//				If ls_prog_name = "SCM_Z05" Or ls_prog_name = "SCM_Z15" Then
+//					lstr_kamoku.kamoku_kbn[1]	= "6"
+//				End If
+//			Case "入金科目コード"
+//				ls_get_column_name			= "入金科目名称"
+//				wf_mod_get(row,	"掛入支更新",	ls_nyuukin_kbn,	1)
+//				Choose Case ls_nyuukin_kbn
+//					Case "4", "5", "6"
+//						lstr_kamoku.kamoku_kbn[1]	= "1"		// 債務
+//						lstr_kamoku.kamoku_kbn[2]	= "6"		// 販売経費
+//					Case "7"
+//						lstr_kamoku.kamoku_kbn[1]	= "1"		// 債務
+//						lstr_kamoku.kamoku_kbn[2]	= "6"		// 販売経費
+//						lstr_kamoku.kamoku_kbn[3]	= "7"		// 販売経費
+//					Case "9"
+//						lstr_kamoku.kamoku_kbn[1]	= "1"		// 債務
+//						lstr_kamoku.kamoku_kbn[2]	= "2"		// 債権
+//						lstr_kamoku.kamoku_kbn[3]	= "6"		// 販売経費
+//						lstr_kamoku.kamoku_kbn[4]	= "7"		// 販売経費
+//				End Choose
+//		End Choose
+//		
+//		wf_mod_set(row, ls_column,	data, 1)
+//		lstr_kamoku.科目コード = pf_nvl_string(data, "")
+//		If ls_prog_name = "SCM_S02" Then //直送入力
+//			pf_get_kamoku(lstr_kamoku)
+//		Else
+//			pf_get_kamoku_kbn_2(lstr_kamoku)
+//		End If
+//		wf_mod_set(row, ls_get_column_name,	lstr_kamoku.科目名称, 1)
+//
+////ADD-S	2007.1.24
+//	/*------------------------------------------------------------------------------------
+//		工程・作業・ライン
+//	------------------------------------------------------------------------------------*/
+	Case	"工程コード", "前工程コード"
+		If (ls_prog_name = "COM_M18" AND ls_column = "工程コード") = FALSE Then
+			Choose Case	ls_column
+				Case	"工程コード"
+					ls_get_column_name	= "工程名称"
+				Case	"前工程コード"
+					ls_get_column_name	= "前工程名称"
+			End Choose
+			
+			If	wf_mod_get(row, "年月"	, ls_date,	4)	Then
+				lstr_koutei.年月			= Datetime(Date(ls_date))
+			End if
+			
+			wf_mod_get(row, "工場部門コード"	, lstr_koutei.工場部門コード,	1)
+			wf_mod_get(row, "チームコード"	, lstr_koutei.チームコード,	1)
+			wf_mod_get(row, "ラインコード"	, lstr_koutei.ラインコード,	1)
+						
+			wf_mod_set(row, ls_column,	data,	1)										// セット
+			lstr_koutei.工程コード = pf_nvl_string(data, "")
+
+			If	Not wf_mod_get(row, "係部門コード", lstr_koutei.部門コード, 1)	Then
+				wf_mod_get(row, "部門コード", lstr_koutei.部門コード, 1)
+			End if
+			
+			pf_get_koutei(lstr_koutei)													// ゲット
+			
+			wf_mod_set(row, ls_get_column_name,	 lstr_koutei.工程名称, 1)	// セット
+	
+			If ls_column = "工程コード" Then
+				
+				lstr_line.年月					= lstr_koutei.年月
+				lstr_line.ラインコード		= lstr_koutei.ラインコード
+				lstr_line.工場部門コード	= lstr_koutei.工場部門コード
+				pf_get_line(lstr_line)
+				
+				lstr_bumon.部門区分配列[1]		= "1"
+				lstr_bumon.部門区分配列[2]		= "3"
+				lstr_bumon.部門区分配列[3]		= "5"
+
+				lstr_bumon.年月					= lstr_line.年月
+				lstr_bumon.部門コード			= lstr_line.部門コード
+				pf_get_bumon2(lstr_bumon)
+				wf_mod_set(row, "係部門コード", 	lstr_bumon.部門コード, 1)
+				wf_mod_set(row, "部門コード", 	lstr_bumon.部門コード, 1)
+				wf_mod_set(row, "係部門名称",		lstr_bumon.部門名称,			1)
+				wf_mod_set(row, "部門名称",		lstr_bumon.部門名称,			1)
+				
+				wf_mod_set(row, "チームコード",	lstr_koutei.チームコード, 	1)	// セット
+				wf_mod_set(row, "チーム名称"	,	lstr_koutei.チーム名称,		1)	// セット
+				wf_mod_set(row, "ラインコード",	lstr_koutei.ラインコード, 	1)	// セット
+				wf_mod_set(row, "ライン名称"	,	lstr_koutei.ライン名称,		1)	// セット
+			End If
+		End If	
+//	Case	"作業コード"
+//		
+//		If ls_prog_name <> "MES_M13" Then
+//			wf_mod_get(row,	"工程コード",	lstr_koutei.工程コード,	1)		// ゲット
+//			wf_mod_get(row,	"工程コード",	lstr_sagyo.工程コード,	1)
+//			pf_get_koutei(lstr_koutei)
+//			wf_mod_set(row,	"工程名称",		lstr_koutei.工程名称,	1)		// セット
+//			
+//			wf_mod_set(row,	"作業コード",	data,	1)								// セット
+//			
+//			lstr_sagyo.作業コード	=	pf_nvl_string(data, "")
+//			pf_get_sagyo(lstr_sagyo)													// ゲット
+//			
+//			wf_mod_set(row,	"作業名称",			lstr_sagyo.作業名称,		1)		// セット
+//			wf_mod_set(row,	"倉庫コード",		lstr_sagyo.倉庫コード,	1)		// セット
+//			wf_mod_set(row,	"倉庫名称",			lstr_sagyo.倉庫名称,		1)		// セット
+//			wf_mod_set(row,	"作業倉庫コード",	lstr_sagyo.倉庫コード,	1)		// セット
+//			wf_mod_set(row,	"作業倉庫名称",	lstr_sagyo.倉庫名称,		1)		// セット
+//			
+//			//作業コード変更に伴う関連カラムのリセット
+//			wf_mod_set(row,	"ラインコード",	"",					1)
+//			wf_mod_set(row,	"ライン名称",	"",						1)
+//		End If
+//		
+	Case	"ラインコード"
+		If ls_prog_name <> "COM_M19" Then		//ラインマスタ
+			wf_mod_Get(row,"工場部門コード",	lstr_line.工場部門コード,	1)
+			If	wf_mod_Get(row, "年月", ls_date, 4)	Then
+				lstr_line.年月			= Datetime(Date(ls_date))
+			End if
+			wf_mod_Get(row,"チームコード",	lstr_line.チームコード,	1)
+			
+			If	Not wf_mod_Get(row,"係部門コード",		lstr_line.部門コード,	1)	Then
+				wf_mod_Get(row,"部門コード",		lstr_line.部門コード,	1)
+			End if
+			
+			lstr_line.工場部門コード	= pf_nvl_String(lstr_line.工場部門コード, "")
+			lstr_line.ラインコード		= pf_nvl_String(data, "")
+			
+			pf_get_line(lstr_line)
+			
+			wf_mod_set(row, "ライン名称", lstr_line.ライン名称, 1)
+			
+			if lstr_line.ret then
+				
+				lstr_bumon.年月					= lstr_line.年月
+				lstr_bumon.部門コード			= lstr_line.部門コード
+				lstr_bumon.部門区分配列[1]		= "1"
+				lstr_bumon.部門区分配列[2]		= "3"
+				lstr_bumon.部門区分配列[3]		= "5"
+				pf_get_bumon2(lstr_bumon)
+				wf_mod_set(row, "係部門コード", 	lstr_bumon.部門コード,	1)
+				wf_mod_set(row, "係部門名称",		lstr_bumon.部門名称,		1)
+				wf_mod_set(row, "部門コード", 	lstr_bumon.部門コード,	1)
+				wf_mod_set(row, "部門名称",		lstr_bumon.部門名称,		1)
+			end if
+			
+			wf_mod_set(row, "工程コード", "", 1)
+			wf_mod_set(row, "工程名称", "", 1)
+		End if
+		
+//	/*------------------------------------------------------------------------------------
+//		生産バッチ
+//	------------------------------------------------------------------------------------*/
+//	Case	"生産バッチ", "在庫計上生産バッチ", "期間生産バッチ", "期間在庫計上生産バッチ", "識別終了生産バッチ",	&
+//			"リードタイム生産バッチ", "受注対象開始生産バッチ", "受注対象終了生産バッチ", "開始生産バッチ", "終了生産バッチ", &
+//			"出来高生産バッチ"
+//			ls_moji	= dwo.name
+//			wf_mod_set(row,	ls_moji,		data,	1)								// セット
+//			
+//	/*------------------------------------------------------------------------------------
+//		取引先入荷納入便
+//	------------------------------------------------------------------------------------*/
+//	Case	"納入便コード", "期間納入便コード"
+//		
+//		Choose Case dwo.name
+//			Case	"納入便コード"
+//				ls_moji	=	""
+//				
+//			Case	"期間納入便コード"
+//				ls_moji	=	"期間"
+//		End Choose
+//		
+//		wf_mod_get(row, "入荷先コード", lstr_nonyubin.入荷先コード, 1)
+//		
+//		lstr_nonyubin.納入便コード	=	pf_nvl_string(data, "")
+//		
+//		pf_get_nonyubin(lstr_nonyubin)
+//		wf_mod_set(row, ls_moji + "納入便名称", lstr_nonyubin.納入便名称,	1)
+//		
+//	/*------------------------------------------------------------------------------------
+//		理由
+//	------------------------------------------------------------------------------------*/
+//	Case	"理由コード", "ロス理由コード"
+//		
+//		Choose Case dwo.name
+//			Case "理由コード"
+//				ls_moji	= ""
+//			Case "ロス理由コード"
+//				ls_moji	= "ロス"
+//		End Choose
+//
+//		wf_mod_get(row, ls_moji	+ "理由区分",	lstr_riyu.理由区分, 1)
+//		wf_mod_set(row, ls_moji + "理由コード",	data, 1)
+//		lstr_riyu.理由コード = pf_nvl_string(data, "")
+//		pf_get_riyu(lstr_riyu)
+//		wf_mod_set(row, ls_moji + "理由名称", lstr_riyu.理由名称, 1)
+////ADD-E	2007.1.24
+//	/*------------------------------------------------------------------------------------
+//		部門マスタ
+//	------------------------------------------------------------------------------------*/
+	Case	"部門コード", "工場部門コード","係部門コード","振替先部門コード"
+		
+		If (ls_prog_name = "COM_M11" AND ls_column = "部門コード") = FALSE Then	//部門マスタ
+		
+			Choose Case ls_column
+				Case "部門コード"
+					wf_mod_get(row, "工場部門コード", lstr_bumon.工場部門コード, 1)
+					lstr_bumon.部門区分配列[1] = "1"
+					lstr_bumon.部門区分配列[2] = "3"
+					lstr_bumon.部門区分配列[3] = "5"
+					ls_get_column_name = "部門名称"
+				
+				Case "工場部門コード"
+					
+					ls_get_column_name = "工場部門名称"
+					
+					wf_mod_get(row, "部門区分", lstr_bumon.部門区分, 1)
+					
+					//部門マスタ.親部門コードの場合、部門区分絞り
+					If	ls_prog_name = "COM_M11"	Then
+						Choose Case	lstr_bumon.部門区分
+							Case	"2"
+								lstr_bumon.部門区分配列[1]	= "1"
+							Case	"4", "5"
+								lstr_bumon.部門区分配列[1]	= "3"
+							Case	"7"
+								lstr_bumon.部門区分配列[1]	= "6"
+							Case	Else
+								lstr_bumon.部門区分配列[1] = "1"
+								lstr_bumon.部門区分配列[2] = "3"
+						End Choose
+					Else
+						lstr_bumon.部門区分配列[1] = "1"
+						lstr_bumon.部門区分配列[2] = "3"
+					End If					
+				
+				Case "係部門コード"
+					ls_get_column_name = "係部門名称"
+					lstr_bumon.部門区分配列[1] = "5"
+					wf_mod_get(row,	"工場部門コード",	lstr_bumon.工場部門コード,	1)
+				Case "振替先部門コード"
+					lstr_bumon.部門区分配列[1] = "1"
+					lstr_bumon.部門区分配列[2] = "3"
+					lstr_bumon.部門区分配列[3] = "5"
+					ls_get_column_name = "振替先部門名称"
+			End Choose
+			
+			wf_mod_get(row, "年月", ls_date,	4)
+			lstr_bumon.年月		= Datetime(Date(ls_date))
+			lstr_bumon.部門コード = pf_nvl_string(data, "")
+						
+			pf_get_bumon2(lstr_bumon)
+			wf_mod_set(row,	ls_get_column_name,	lstr_bumon.部門名称,	1)
+			
+		End If
+		
+		If	ls_column	= "工場部門コード"	Then
+			wf_mod_set(row, "係部門コード",	"", 1)
+			wf_mod_set(row, "係部門名称",		"", 1)
+			wf_mod_set(row, "部門コード",		"", 1)
+			wf_mod_set(row, "部門名称",		"", 1)
+			wf_mod_set(row, "チームコード", 	"", 1)
+			wf_mod_set(row, "チーム名称", 	"", 1)
+			wf_mod_set(row, "ラインコード", 	"", 1)
+			wf_mod_set(row, "ライン名称", 	"", 1)
+			wf_mod_set(row, "工程コード", 	"", 1)
+			wf_mod_set(row, "工程名称", 		"", 1)
+			wf_mod_set(row, "群コード", 		"", 1)
+			wf_mod_set(row, "群名称", 			"", 1)
+			wf_mod_set(row, "倉庫コード", 	"", 1)
+			wf_mod_set(row, "倉庫名称", 		"", 1)
+		Elseif	ls_column	= "係部門コード"	OR	ls_column	= "部門コード"	Then
+			wf_mod_set(row, "チームコード", 	"", 1)
+			wf_mod_set(row, "チーム名称", 	"", 1)
+			wf_mod_set(row, "ラインコード", 	"", 1)
+			wf_mod_set(row, "ライン名称", 	"", 1)
+			wf_mod_set(row, "工程コード", 	"", 1)
+			wf_mod_set(row, "工程名称", 		"", 1)
+			wf_mod_set(row, "群コード", 		"", 1)
+			wf_mod_set(row, "群名称", 			"", 1)
+			wf_mod_set(row, "倉庫コード", 	"", 1)
+			wf_mod_set(row, "倉庫名称", 		"", 1)
+		End if
+		
+/*------------------------------------------------------------------------------------
+		チームマスタ
+------------------------------------------------------------------------------------*/		
+	Case	"チームコード"
+		
+		If	ls_prog_name <> "COM_M17"	Then
+			wf_mod_Get(row, "年月", ls_date, 4)
+			lstr_team.年月					= Datetime(Date(ls_date))
+			wf_mod_Get(row,"工場部門コード",		lstr_team.工場部門コード, 	1)
+			lstr_team.工場部門コード	= pf_nvl_String(lstr_team.工場部門コード, "")
+			If	Not wf_mod_get(row, "係部門コード", 	lstr_team.部門コード, 1)	Then
+				wf_mod_get(row, "部門コード",		lstr_team.部門コード, 1)
+			End if
+			lstr_team.チームコード		= pf_nvl_String(data, "")
+			pf_get_Team(lstr_team)
+			wf_mod_set(row, "チーム名称", lstr_team.チーム名称, 1)
+
+			If	lstr_team.ret	Then
+				wf_mod_set(row, "係部門コード", 	lstr_team.部門コード, 1)
+				wf_mod_set(row, "部門コード", 	lstr_team.部門コード, 1)
+				lstr_bumon.部門コード			= lstr_team.部門コード
+				lstr_bumon.部門区分配列[1]		= "1"
+				lstr_bumon.部門区分配列[1]		= "3"
+				lstr_bumon.部門区分配列[1]		= "5"
+				lstr_bumon.年月					= lstr_team.年月
+				pf_get_bumon(lstr_bumon)
+				wf_mod_set(row, "係部門名称",	lstr_bumon.部門名称, 1)
+				wf_mod_set(row, "部門名称",	lstr_bumon.部門名称, 1)
+			End if	
+				wf_mod_set(row, "工程コード",	"", 1)
+				wf_mod_set(row, "工程名称", 	"", 1)
+				wf_mod_set(row, "群コード", 	"", 1)
+				wf_mod_set(row, "群名称", 		"", 1)
+				wf_mod_set(row, "倉庫コード", "", 1)
+				wf_mod_set(row, "倉庫名称", 	"", 1)
+			
+		End if
+		
+/*------------------------------------------------------------------------------------
+		イベントマスタ
+------------------------------------------------------------------------------------*/		
+	Case	"イベントコード"
+		If ls_prog_name <> "COM_M05" Then		//イベントマスタ
+			lstr_event.イベントコード	= pf_nvl_String(data, "")
+			pf_get_event(lstr_event)
+			wf_mod_set(row, "イベント名称", lstr_event.イベント名称, 1)
+		End If
+
+/*------------------------------------------------------------------------------------
+		群マスタ
+------------------------------------------------------------------------------------*/		
+	Case	"群コード"
+		
+		If ls_prog_name <> "COM_M20"	Then
+			
+			wf_mod_Get(row, "年月", ls_date, 4)
+			lstr_gun.年月				= Datetime(Date(ls_date))
+
+			wf_mod_Get(row,"工場部門コード",lstr_gun.工場部門コード, 1)
+			lstr_gun.工場部門コード	= pf_nvl_String(lstr_gun.工場部門コード, "")
+			
+			If	lstr_gun.工場部門コード	<> ""	Then
+				wf_mod_Get(row, "チームコード", lstr_gun.チームコード,1)
+				lstr_gun.群コード		= pf_nvl_String(data, "")
+				
+				If	Not wf_mod_get(row, "係部門コード", 	lstr_gun.部門コード, 1)	Then
+					wf_mod_get(row, "部門コード", 	lstr_gun.部門コード, 1)
+				End if
+
+				pf_get_Gun(lstr_gun)
+				wf_mod_set(row, "群名称", lstr_gun.群名称, 1)
+		
+				//If	lstr_gun.群コード	<> ""	Then
+					
+					//wf_mod_get(row, "チームコード", lstr_team.チームコード, 1)
+					
+					//If pf_nvl_String(lstr_team.チームコード, "") = ""	Then
+						wf_mod_set(row, "チームコード", lstr_gun.チームコード, 1)
+						lstr_Team.年月					= lstr_gun.年月
+						lstr_Team.工場部門コード	= lstr_gun.工場部門コード
+						lstr_team.チームコード		= lstr_gun.チームコード
+						
+						pf_get_Team(lstr_Team)
+						wf_mod_set(row, "チーム名称", lstr_team.チーム名称, 1)
+						
+						lstr_bumon.年月				= lstr_team.年月
+						lstr_bumon.部門コード		= lstr_team.部門コード
+						lstr_bumon.工場部門コード	= lstr_team.工場部門コード
+						lstr_bumon.部門区分配列[1]	= "1"
+						lstr_bumon.部門区分配列[2]	= "3"
+						lstr_bumon.部門区分配列[3]	= "5"
+						pf_get_Bumon2(lstr_bumon)
+						wf_mod_set(row, "係部門コード",	lstr_bumon.部門コード, 	1)
+						wf_mod_set(row, "部門コード", 	lstr_bumon.部門コード, 	1)
+						wf_mod_set(row, "係部門名称", 	lstr_bumon.部門名称, 	1)
+						wf_mod_set(row, "部門名称", 		lstr_bumon.部門名称, 	1)
+					//End if
+				
+				//End if
+			End if
+		End if
+	
+/*------------------------------------------------------------------------------------
+	階層区分
+------------------------------------------------------------------------------------*/
+	Case	"階層品名区分１","階層品名区分２","階層品名区分３","階層品名区分４","階層品名区分５"
+		Choose Case	dwo.name
+			Case	"階層品名区分１"
+				lstr_kaiso_h_kbn.code1 = data
+				lstr_kaiso_h_kbn.code2 = "000"
+				lstr_kaiso_h_kbn.code3 = "000"
+				lstr_kaiso_h_kbn.code4 = "000"
+				lstr_kaiso_h_kbn.code5 = "000"
+		
+				pf_get_kaiso_hin_kubun(lstr_kaiso_h_kbn)
+		
+				wf_mod_set(row, "階層品名区分１", lstr_kaiso_h_kbn.code1, 1)
+				Choose Case ls_prog_name 
+					Case "COM_M07"		// 階層品名区分マスタ
+						wf_mod_set(row, "階層品名区分２", lstr_kaiso_h_kbn.code2, 1)
+						wf_mod_set(row, "階層品名区分３", lstr_kaiso_h_kbn.code3, 1)
+						wf_mod_set(row, "階層品名区分４", lstr_kaiso_h_kbn.code4, 1)
+						wf_mod_set(row, "階層品名区分５", lstr_kaiso_h_kbn.code5, 1)
+					Case Else
+						wf_mod_set(row, "階層品名区分２", "", 1)
+						wf_mod_set(row, "階層品名区分３", "", 1)
+						wf_mod_set(row, "階層品名区分４", "", 1)
+						wf_mod_set(row, "階層品名区分５", "", 1)
+				End Choose
+				wf_mod_set(row, "階層品名区分名称１", lstr_kaiso_h_kbn.name1, 1)
+				wf_mod_set(row, "階層品名区分名称２", "", 1)
+				wf_mod_set(row, "階層品名区分名称３", "", 1)
+				wf_mod_set(row, "階層品名区分名称４", "", 1)
+				wf_mod_set(row, "階層品名区分名称５", "", 1)
+			Case	"階層品名区分２"
+				wf_mod_get(row,	"階層品名区分１",	lstr_kaiso_h_kbn.code1,	1)
+				lstr_kaiso_h_kbn.code2 = data
+				lstr_kaiso_h_kbn.code3 = "000"
+				lstr_kaiso_h_kbn.code4 = "000"
+				lstr_kaiso_h_kbn.code5 = "000"
+		
+				pf_get_kaiso_hin_kubun(lstr_kaiso_h_kbn)
+		
+				wf_mod_set(row, "階層品名区分２", lstr_kaiso_h_kbn.code2, 1)
+				Choose Case ls_prog_name 
+					Case "COM_M07"		// 階層品名区分マスタ
+						wf_mod_set(row, "階層品名区分３", lstr_kaiso_h_kbn.code3, 1)
+						wf_mod_set(row, "階層品名区分４", lstr_kaiso_h_kbn.code4, 1)
+						wf_mod_set(row, "階層品名区分５", lstr_kaiso_h_kbn.code5, 1)
+					Case Else
+						wf_mod_set(row, "階層品名区分３", "", 1)
+						wf_mod_set(row, "階層品名区分４", "", 1)
+						wf_mod_set(row, "階層品名区分５", "", 1)
+				End Choose
+				wf_mod_set(row, "階層品名区分名称２", lstr_kaiso_h_kbn.name2, 1)
+				wf_mod_set(row, "階層品名区分名称３", "", 1)
+				wf_mod_set(row, "階層品名区分名称４", "", 1)
+				wf_mod_set(row, "階層品名区分名称５", "", 1)
+			Case	"階層品名区分３"
+				wf_mod_get(row,	"階層品名区分１",	lstr_kaiso_h_kbn.code1,	1)
+				wf_mod_get(row,	"階層品名区分２",	lstr_kaiso_h_kbn.code2,	1)
+				lstr_kaiso_h_kbn.code3 = data
+				lstr_kaiso_h_kbn.code4 = "000"
+				lstr_kaiso_h_kbn.code5 = "000"
+		
+				pf_get_kaiso_hin_kubun(lstr_kaiso_h_kbn)
+		
+				wf_mod_set(row, "階層品名区分３", lstr_kaiso_h_kbn.code3, 1)
+				Choose Case ls_prog_name 
+					Case "COM_M07"		// 階層品名区分マスタ
+						wf_mod_set(row, "階層品名区分４", lstr_kaiso_h_kbn.code4, 1)
+						wf_mod_set(row, "階層品名区分５", lstr_kaiso_h_kbn.code5, 1)
+					Case Else
+						wf_mod_set(row, "階層品名区分４", "", 1)
+						wf_mod_set(row, "階層品名区分５", "", 1)
+				End Choose
+				wf_mod_set(row, "階層品名区分名称３", lstr_kaiso_h_kbn.name3, 1)
+				wf_mod_set(row, "階層品名区分名称４", "", 1)
+				wf_mod_set(row, "階層品名区分名称５", "", 1)
+			Case	"階層品名区分４"
+				wf_mod_get(row,	"階層品名区分１",	lstr_kaiso_h_kbn.code1,	1)
+				wf_mod_get(row,	"階層品名区分２",	lstr_kaiso_h_kbn.code2,	1)
+				wf_mod_get(row,	"階層品名区分３",	lstr_kaiso_h_kbn.code3,	1)
+				lstr_kaiso_h_kbn.code4 = data
+				lstr_kaiso_h_kbn.code5 = "000"
+		
+				pf_get_kaiso_hin_kubun(lstr_kaiso_h_kbn)
+		
+				wf_mod_set(row, "階層品名区分４", lstr_kaiso_h_kbn.code4, 1)
+				Choose Case ls_prog_name 
+					Case "COM_M07"		// 階層品名区分マスタ
+						wf_mod_set(row, "階層品名区分５", lstr_kaiso_h_kbn.code5, 1)
+					Case Else
+						wf_mod_set(row, "階層品名区分５", "", 1)
+				End Choose
+				wf_mod_set(row, "階層品名区分名称４", lstr_kaiso_h_kbn.name4, 1)
+				wf_mod_set(row, "階層品名区分名称５", "", 1)
+			Case	"階層品名区分５"
+				wf_mod_get(row,	"階層品名区分１",	lstr_kaiso_h_kbn.code1,	1)
+				wf_mod_get(row,	"階層品名区分２",	lstr_kaiso_h_kbn.code2,	1)
+				wf_mod_get(row,	"階層品名区分３",	lstr_kaiso_h_kbn.code3,	1)
+				wf_mod_get(row,	"階層品名区分４",	lstr_kaiso_h_kbn.code4,	1)
+				lstr_kaiso_h_kbn.code5 = data
+		
+				pf_get_kaiso_hin_kubun(lstr_kaiso_h_kbn)
+		
+				wf_mod_set(row, "階層品名区分５", lstr_kaiso_h_kbn.code5, 1)
+				wf_mod_set(row, "階層品名区分名称５", lstr_kaiso_h_kbn.name5, 1)
+		End Choose
+		
+/*------------------------------------------------------------------------------------
+		配賦基準
+------------------------------------------------------------------------------------*/		
+	Case	"配賦基準コード"
+		If ls_prog_name <> "COM_M36" Then		//配賦基準マスタ
+			lstr_haifu.配賦基準コード	= pf_nvl_String(data, "")
+			pf_get_haifu(lstr_haifu)
+			wf_mod_set(row, "配賦基準名称", lstr_haifu.配賦基準名称, 1)
+		End If
+		
+/*------------------------------------------------------------------------------------
+		費目
+------------------------------------------------------------------------------------*/		
+	Case	"費目コード"
+		If ls_prog_name <> "COM_M38" Then		//費目マスタ
+			lstr_himoku.費目コード	= pf_nvl_String(data, "")
+			pf_get_himoku(lstr_himoku)
+			wf_mod_set(row, "費目名称", lstr_himoku.費目名称, 1)
+		End If
+
+/*------------------------------------------------------------------------------------
+		商品
+------------------------------------------------------------------------------------*/		
+	Case	"商品コード"
+//		If ls_prog_name <> "COM_MXX" Then		//商品マスタ
+			wf_mod_Get(row, "年月", ls_date, 4)
+			lstr_syohin.年月			= Datetime(Date(ls_date))
+			lstr_syohin.商品コード	= pf_nvl_String(data, "")
+			pf_get_syohin(lstr_syohin)
+			wf_mod_set(row, "商品名称", lstr_syohin.商品名称, 1)
+			
+			wf_mod_set(row, "品目番号",	"", 1)
+			wf_mod_set(row, "品名",			"", 1)
+//		End If	
+
+/*------------------------------------------------------------------------------------
+		資産種類
+------------------------------------------------------------------------------------*/		
+	Case	"資産種類"
+		wf_mod_set(row, "品目番号",	"", 1)
+		wf_mod_set(row, "品名",			"", 1)
+
+/*------------------------------------------------------------------------------------
+		取引先（倉庫・仕入先）
+------------------------------------------------------------------------------------*/		
+	Case	"倉庫コード", "仕入先コード"
+		If ls_prog_name <> "COM_M28" Then
+			wf_mod_Get(row, "年月", ls_date, 4)
+			lstr_torihiki.年月			= Datetime(Date(ls_date))
+			lstr_torihiki.取引先コード	= pf_nvl_String(data, "")
+			
+			If	Not wf_mod_get(row, "係部門コード", 	lstr_torihiki.部門コード, 1)	Then
+				wf_mod_get(row, "部門コード", 	lstr_torihiki.部門コード, 1)
+			End if
+			
+			Choose Case	ls_column
+				Case	"倉庫コード"
+					lstr_torihiki.倉庫			= "1"
+					ls_moji							= "倉庫"
+				Case	"仕入先コード"
+					lstr_torihiki.仕入先			= "1"
+					ls_moji							= "仕入先"
+			End Choose
+				pf_get_torihiki(lstr_torihiki)
+				wf_mod_set(row, ls_moji	+ "名称", lstr_torihiki.取引先略称, 1)
+				
+			If	ls_column	= "倉庫コード"	Then
+				
+				lstr_bumon.年月						= lstr_torihiki.年月
+				lstr_bumon.部門コード				= lstr_torihiki.工場部門コード
+				lstr_bumon.部門区分配列[1]			= "1"
+				lstr_bumon.部門区分配列[2]			= "3"
+				pf_get_bumon2(lstr_bumon)
+				wf_mod_set(row, "工場部門コード",	lstr_bumon.部門コード,	1)
+				wf_mod_set(row, "工場部門名称",		lstr_bumon.部門名称,		1)
+				
+				lstr_team.年月							= lstr_torihiki.年月
+				lstr_team.工場部門コード			= lstr_torihiki.工場部門コード
+				lstr_team.チームコード				= lstr_torihiki.チームコード
+				pf_get_Team(lstr_team)
+				wf_mod_set(row, "チームコード",	lstr_torihiki.チームコード, 1)
+				wf_mod_set(row, "チーム名称", 	lstr_team.チーム名称,			1)
+				
+
+				
+				lstr_bumon2.年月						= lstr_torihiki.年月
+				lstr_bumon2.部門コード				= lstr_team.部門コード
+				lstr_bumon2.部門区分配列[1]		= "1"
+				lstr_bumon2.部門区分配列[2]		= "3"
+				lstr_bumon2.部門区分配列[3]		= "5"
+				pf_get_bumon2(lstr_bumon2)
+				wf_mod_set(row, "係部門コード",	lstr_bumon2.部門コード,	1)
+				wf_mod_set(row, "係部門名称",		lstr_bumon2.部門名称,	1)
+				wf_mod_set(row, "部門コード",		lstr_bumon2.部門コード,	1)
+				wf_mod_set(row, "部門名称",		lstr_bumon2.部門名称,	1)
+			End if
+			
+		End If	
+
+/*------------------------------------------------------------------------------------
+		終了年月
+------------------------------------------------------------------------------------*/		
+	Case	"終了年月"
+			ldt_date = Datetime(Date(data))
+			pf_get_master_date(ldt_date)			//有効なマスタ検索年月を取得
+			ls_date = string(ldt_date)
+			wf_mod_set(row, "年月", ls_date , 4)
+			lb_date_changed = TRUE
+
+/*------------------------------------------------------------------------------------
+		年月
+------------------------------------------------------------------------------------*/		
+	Case	"年月"
+		lb_date_changed = TRUE
+
+End Choose
+
+/*------------------------------------------------------------------------------------
+		年月処理
+------------------------------------------------------------------------------------*/
+//年月が変更されていれば各マスタを再検索
+If	lb_date_changed	Then
+	If	wf_mod_get(row, "年月", ls_date, 4)	Then
+		ldt_date	= Datetime(Date(ls_date))
+		If	ls_column	= "年月"	Then
+			ldt_date	= Datetime(Date(data))
+		End if
+		//工場部門検索
+		wf_mod_get(row, "工場部門コード", lstr_bumon.部門コード, 1)
+		lstr_bumon.年月	= ldt_date
+		lstr_bumon.部門区分配列[1]	= "1"
+		lstr_bumon.部門区分配列[2]	= "3"
+		pf_get_bumon2(lstr_bumon)
+		wf_mod_set(row, "工場部門名称", lstr_bumon.部門名称, 1)
+		
+		//係部門（or 部門）検索
+		lstr_bumon2.年月	= ldt_date
+		
+		if	Not wf_mod_get(row, "係部門コード", lstr_bumon2.部門コード, 1)	Then
+			wf_mod_get(row, "部門コード", lstr_bumon2.部門コード, 1)
+		End if
+		
+		lstr_bumon2.部門区分配列[1]	= "1"
+		lstr_bumon2.部門区分配列[2]	= "3"
+		lstr_bumon2.部門区分配列[3]	= "5"
+
+		pf_get_bumon2(lstr_bumon2)
+		wf_mod_set(row, "係部門名称", lstr_bumon2.部門名称, 1)
+		wf_mod_set(row, "部門名称", lstr_bumon2.部門名称, 1)
+		
+		
+		//チーム検索
+		wf_mod_get(row, "チームコード", lstr_team.チームコード, 1)
+		lstr_team.年月					= lstr_bumon.年月
+		lstr_team.工場部門コード	= lstr_bumon.部門コード
+		pf_get_team(lstr_team)
+		wf_mod_set(row, "チーム名称", lstr_team.チーム名称, 1)
+			
+		//ライン検索
+		wf_mod_get(row, "ラインコード", lstr_line.ラインコード, 1)	
+		lstr_line.年月					= lstr_bumon.年月	
+		lstr_line.工場部門コード	= lstr_bumon.工場部門コード
+		pf_get_line(lstr_line)
+		wf_mod_set(row, "ライン名称", lstr_line.ライン名称, 1)
+		
+		//工程検索
+		wf_mod_get(row, "工程コード", lstr_koutei.工程コード, 1)	
+		lstr_koutei.年月				= lstr_bumon.年月	
+		lstr_koutei.工場部門コード	= lstr_bumon.工場部門コード
+		lstr_koutei.チームコード	= lstr_team.チームコード
+		lstr_koutei.ラインコード	= lstr_line.ラインコード
+		pf_get_koutei(lstr_koutei)
+		wf_mod_set(row, "工程名称", lstr_koutei.工程名称, 1)
+		
+		//群検索
+		wf_mod_get(row, "群コード", lstr_gun.群コード, 1)	
+		lstr_gun.年月				= lstr_bumon.年月	
+		lstr_gun.工場部門コード	= lstr_bumon.工場部門コード
+		lstr_gun.チームコード	= lstr_team.チームコード
+		pf_get_gun(lstr_gun)
+		wf_mod_set(row, "群名称", lstr_gun.群名称, 1)
+
+		//倉庫検索
+		wf_mod_get(row, "倉庫コード", lstr_torihiki.取引先コード, 1)
+		lstr_torihiki.年月		= ldt_date
+		lstr_torihiki.倉庫		= "1"
+		pf_get_torihiki(lstr_torihiki)
+		wf_mod_set(row,	"倉庫名称",	lstr_torihiki.取引先略称,	1)
+		
+		//商品検索
+		lstr_syohin.年月			= ldt_date
+		wf_mod_get(row, "商品コード", lstr_syohin.商品コード, 1)
+		pf_get_syohin(lstr_syohin)
+		wf_mod_set(row,	"商品名称",	lstr_syohin.商品名称,	1)
+		
+		//品名検索
+		lstr_hin.年月				= ldt_date
+		wf_mod_get(row, "品目番号", lstr_hin.品目番号, 1)
+		pf_get_hin(lstr_hin)
+		wf_mod_set(row,	"品名",	lstr_hin.品名,	1)
+		
+	End if
+End if

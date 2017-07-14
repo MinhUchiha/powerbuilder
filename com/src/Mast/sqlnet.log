@@ -1,0 +1,477 @@
+
+
+***********************************************************************
+Fatal NI connect error 12528, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=HPDB)(PORT=1521))(CONNECT_DATA=(SID=HPDB)(CID=(PROGRAM=C:\Program Files\Sybase10\PowerBuilder 10.0\PB100.EXE)(HOST=TKBPC1327)(USER=1327))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 13-JUN-2007 13:34:40
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS: 接続が拒否されました。
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12528, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=HPDB)(PORT=1521))(CONNECT_DATA=(SID=HPDB)(CID=(PROGRAM=C:\Program Files\Sybase10\PowerBuilder 10.0\PB100.EXE)(HOST=TKBPC1327)(USER=1327))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 13-JUN-2007 13:35:48
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS: 接続が拒否されました。
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12528, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=HPDB)(PORT=1521))(CONNECT_DATA=(SID=HPDB)(CID=(PROGRAM=C:\Program Files\Sybase10\PowerBuilder 10.0\PB100.EXE)(HOST=TKBPC1327)(USER=1327))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 13-JUN-2007 13:36:23
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS: 接続が拒否されました。
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12528, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=HPDB)(PORT=1521))(CONNECT_DATA=(SID=HPDB)(CID=(PROGRAM=C:\Program Files\Sybase10\PowerBuilder 10.0\PB100.EXE)(HOST=TKBPC1327)(USER=1327))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 13-JUN-2007 13:37:02
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS: 接続が拒否されました。
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.20.6.30)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SMBMIP01)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DEMO_SONY)(USER=centurion))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 11-SEP-2007 21:45:29
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SID=MOROCOM)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=DELL-4700C-TF)(USER=Fujimoto-t))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 14-MAY-2008 09:26:44
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.8.110.100)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morosei)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 12-JUN-2008 10:55:01
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FMV074)(USER=FMV074_XP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 05-SEP-2008 18:07:02
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 05-NOV-2008 14:03:52
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 05-NOV-2008 16:27:25
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=128.1.11.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=morocom)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=JUPITER-D172DE2)(USER=ohmine-a))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 08-DEC-2008 15:14:32
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS: 操作はタイム・アウトしました。
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 操作タイムアウトです。
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:18:38
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:18:44
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:19:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:20:02
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:20:23
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:20:31
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:21:05
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:21:32
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hpdb)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hpdb)(CID=(PROGRAM=C:\Program Files\Sybase\PowerBuilder 10.0\PB100.EXE)(HOST=FURUKAWA-S)(USER=furukawa-s))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 06-APR-2009 14:24:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12545
+    TNS-12545: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: 接続に失敗しました。ターゲット・ホストまたはオブジェクトが存在しません。
+    nt secondary err code: 1001
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=82340BBA988E471)(USER=kotani-n))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 14-1月 -2011 12:58:33
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=82340BBA988E471)(USER=kotani-n))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 14-1月 -2011 12:59:15
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=82340BBA988E471)(USER=kotani-n))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 14-1月 -2011 13:53:54
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program?Files\Sybase\PowerBuilder?10.0\PB100.EXE)(HOST=82340BBA988E471)(USER=kotani-n))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 14-1月 -2011 13:55:52
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: TNS: プロトコル・アダプタ・エラー
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: プロトコル・アダプタ・エラーです。
+    nt secondary err code: 126
+    nt OS err code: 0
