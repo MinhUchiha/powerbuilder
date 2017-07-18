@@ -30,5 +30,5 @@ Save Format v3.0(19990112)
  9 "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";
  19 "..\\com\\src\\Genka\\com_g13\uff08\u6708\u6b21\u539f\u4fa1\u51e6\u7406\uff08\u5358\u72ecEXE\uff09\uff09.pbt";
 @end;
-DefaultTarget "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";
-DefaultRemoteTarget "..\\com\\src\\Main\\com_main09(\u4e88\u7b97\uff3f\u751f\u7523\u8a08\u753b).pbt";
+DefaultTarget "..\\com\\src\\Main\\com_main02(\u539f\u4fa1\u6a19\u6e96).pbt";
+DefaultRemoteTarget "..\\com\\src\\Main\\com_main02(\u539f\u4fa1\u6a19\u6e96).pbt";
